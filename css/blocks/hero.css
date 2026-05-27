@@ -12,7 +12,7 @@
       rgba(0, 0, 0, 0.65) 80%,
       rgba(0, 0, 0, 0.65) 100%
     ),
-    url("/images/hero.jpg") no-repeat center center scroll;
+    url("../../images/hero.jpg") no-repeat center center scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
