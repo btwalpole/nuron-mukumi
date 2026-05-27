@@ -32,10 +32,12 @@
         <button>Enquire for a performance</button>
       </div>
     </div>
-    <main>
-      <div class="region wrapper">
-        <p>LATEST PERFORMANCE</p>
-        <h2>The National Symphony Orchestra of Ukraine</h2>
+    <main class="flow">
+      <div class="region wrapper flow">
+        <div>
+          <p>LATEST PERFORMANCE</p>
+          <h2>The National Symphony Orchestra of Ukraine</h2>
+        </div>
         <p>
           In January 2026, Nuron Mukumi gave another solidarity concert in Kyiv
           with the National Symphony Orchestra of Ukraine.
@@ -46,20 +48,23 @@
           by Ludwig van Beethoven. Spending eight days in the capital, Nuron
           also ran teaching masterclasses with young Ukrainian musicians.
         </p>
-        <div class="callout">
-          <p>
-            “The orchestra continued its work despite sleepless nights under
-            incessant bombardment... They are countering the Russian aggressor
-            with their own civilization.”
-          </p>
-
-          <a
-            href="https://www.pizzicato.lu/nuron-mukumi-and-the-national-symphony-orchestra-of-ukraine-live-on-youtube/"
-            >Read the review in Pizzicato</a
-          >
+        <div>
+          <blockquote>
+            <q>
+              The orchestra continued its work despite sleepless nights under
+              incessant bombardment... They are countering the Russian aggressor
+              with their own civilization.
+            </q>
+            <footer>
+              <a
+                href="https://www.pizzicato.lu/nuron-mukumi-and-the-national-symphony-orchestra-of-ukraine-live-on-youtube/"
+                >Read the review in Pizzicato</a
+              >
+            </footer>
+          </blockquote>
         </div>
         <iframe
-          width="560"
+          width="100%"
           height="315"
           src="https://www.youtube.com/embed/XcHrnxagIYk?si=1yyp38fXMg-qqsou"
           title="YouTube video player"
@@ -77,9 +82,11 @@
           allowfullscreen
         ></iframe>
       </div>
-      <div class="region wrapper">
-        <p>LATEST ALBUM</p>
-        <h2>Portraits of Bowen</h2>
+      <div class="region wrapper flow">
+        <div>
+          <p>LATEST ALBUM</p>
+          <h2>Portraits of Bowen</h2>
+        </div>
         <p>
           The English late Romantic composer York Bowen composed the recorded
           pieces in 1938, but did not publish them until 1950. Bowen
@@ -88,18 +95,33 @@
           ugly, then there is all the more reason why music should bring beauty
           into it”.
         </p>
-        <div class="callout">
-          <p>
-            “Mukumi masterfully commands the miniatures, drawn with an extremely
+        <blockquote>
+          <q>
+            Mukumi masterfully commands the miniatures, drawn with an extremely
             fine brush, and shines in both technically demanding and quiet,
-            lyrical passages: a revelation!”
-          </p>
-
-          <a href="https://taz.de/Neue-Musik-aus-Berlin/!6041370/"
-            >Read the review in taz.de</a
-          >
+            lyrical passages: a revelation!
+          </q>
+          <footer>
+            <a href="https://taz.de/Neue-Musik-aus-Berlin/!6041370/"
+              >Read the review in taz.de</a
+            >
+          </footer>
+        </blockquote>
+        <div
+          class="album"
+          style="display: flex; flex-direction: row; gap: var(--space-s)"
+        >
+          <img src="images/Portraits-of-Bowen-Nuron-Mukumi.jpg" width="50%" />
+          <div>
+            <p>AWARD NOMINATIONS</p>
+            <ul role="list">
+              <li>
+                <a href="#">The International Classical Music Awards 2025</a>
+              </li>
+              <li><a href="#">The German Record Critic’s Award 2025</a></li>
+            </ul>
+          </div>
         </div>
-        <img src="images/Portraits-of-Bowen-Nuron-Mukumi.jpg" width="50%" />
         <button>Listen to the album on Spotify</button>
       </div>
     </main>
