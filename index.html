@@ -6,44 +6,65 @@
     <link rel="stylesheet" href="css/global.css" />
   </head>
   <body>
-    <div class="hero" role="img">
-      <header class="">
-        <nav aria-label="primary" class="repel">
-          <a href="#">
-            <img
-              src="images/nuron-mukumi-logo.svg"
-              alt="Nuron Mukumi Logo"
-              width="80px"
-            />
-          </a>
-          <!-- <ul role="list">
+    <!-- <div class="hero" role="img"> -->
+    <section class="hero">
+      <picture class="hero__media">
+        <!-- Different image for large screens -->
+        <source
+          media="(min-width: 601px)"
+          srcset="images/hero-wide.jpg"
+          sizes="100vw"
+        />
+        <source media="(max-width: 600px)" srcset="images/hero-tall.jpg" />
+        <!-- Default/mobile -->
+        <img
+          src="images/hero-tall.jpg"
+          srcset="images/hero-tall.jpg"
+          sizes="100vw"
+          alt=""
+          class="hero__image"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
+
+      <div class="hero__content">
+        <header class="">
+          <nav aria-label="primary" class="repel">
+            <a href="#">
+              <img src="images/logo.svg" alt="Nuron Mukumi Logo" width="80px" />
+            </a>
+            <!-- <ul role="list">
             <li><a href="#">BIOGRAPHY</a></li>
             <li><a href="#">CONCERTS</a></li>
             <li><a href="#">REPERTOIRE</a></li>
           </ul> -->
-        </nav>
-      </header>
-      <div class="flow">
-        <div>
-          <h1>
-            Nuron <br />
-            Mukumi
-          </h1>
-          <p>CLASSICAL PIANIST</p>
-        </div>
-        <div>
-          <p class="cta-quote">“Intoxicating Virtuosity.”</p>
-          <div class="cta-social-proof-link">
-            <p>—</p>
-            <a
-              href="https://www.spiegel.de/kultur/musik/klassik-neues-von-nuron-mukumi-und-daniil-trifonov-a-1236550.html"
-              >Spiegel Online</a
-            >
+          </nav>
+        </header>
+        <div class="flow">
+          <div>
+            <h1>
+              Nuron <br />
+              Mukumi
+            </h1>
+            <p>CLASSICAL PIANIST</p>
           </div>
+          <div>
+            <p class="cta-quote">“Intoxicating Virtuosity.”</p>
+            <div class="cta-social-proof-link">
+              <p>—</p>
+              <a
+                href="https://www.spiegel.de/kultur/musik/klassik-neues-von-nuron-mukumi-und-daniil-trifonov-a-1236550.html"
+                >Spiegel Online</a
+              >
+            </div>
+          </div>
+          <a href="#" class="button">Enquire for a performance</a>
         </div>
-        <a href="#" class="button">Enquire for a performance</a>
       </div>
-    </div>
+    </section>
+
+    <!-- </div> -->
     <main class="flow">
       <div class="region wrapper flow">
         <div>
