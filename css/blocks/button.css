@@ -1,0 +1,37 @@
+.button {
+  --button-bg: transparent;
+  --button-text: var(--light-grey);
+  --button-x-padding: 1.5em;
+  --button-y-padding: 0.75em;
+  --button-gutter: 0.5ch;
+  --focus-color: var(--light-grey);
+
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--light-grey);
+  padding: var(--button-y-padding) var(--button-x-padding);
+  display: inline-flex;
+  gap: var(--button-gutter);
+  align-items: center;
+  line-height: var(--leading-flat);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "DM Serif Text";
+  font-size: var(--size-step-1);
+  /* font-weight: var(--font-bold); */
+}
+
+.button:hover {
+  filter: brightness(115%);
+}
+
+.button:active {
+  transform: scale(99%);
+}
+
+.button[data-button-variant="dark"] {
+  --button-bg: var(--dark);
+  --button-text: var(--light-grey);
+  --focus-color: var(--dark);
+  border: none;
+}

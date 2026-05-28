@@ -1,0 +1,53 @@
+.prose {
+  --flow-space: var(--space-l);
+}
+
+.prose :is(h1, h2, h3) {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.prose :is(p, li, dl, figcaption, blockquote) {
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+
+/**I like to reduce the space of anything that follows a heading, 
+so that the content looks like part of a section.
+ We can do that by first looking for headings one through to four, 
+ and then targeting any direct sibling (+ * combinators) that don’t have a class :not([class]). 
+ With those selected, we reduce the space by stepping down the spacing scale.*/
+.prose :is(h1, h2, h3, h4) + *:not([class]) {
+  --flow-space: var(--space-m);
+}
+
+/* Add more space on and around figures and tables */
+.prose :is(figure, table),
+.prose :is(figure, table) + * {
+  --flow-space: var(--space-2xl);
+}
+
+/* Add more space to headings on block start */
+.prose * + :is(h1, h2, h3, h4):not([class]) {
+  --flow-space: var(--space-xl);
+}
+
+.prose :is(ul, ol):not([class]) li + li,
+.prose :is(ul, ol):not([class]) li > :is(ol, ul) {
+  --flow-space: var(--space-xs);
+}
+
+.prose hr {
+  --flow-space: var(--space-2xl);
+}
+
+.prose :is(img, picture, video) {
+  border: var(--stroke);
+}
+
+@media (min-width: 760px) {
+  .prose :is(h1, h2, h3) {
+    overflow-wrap: unset;
+    hyphens: unset;
+  }
+}
