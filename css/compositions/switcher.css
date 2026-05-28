@@ -1,0 +1,8 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.switcher > * {
+  flex: 1 1 30rem;
+}

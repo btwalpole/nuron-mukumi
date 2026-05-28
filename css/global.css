@@ -5,5 +5,7 @@
 @import "compositions/full-bleed.css";
 @import "compositions/repel.css";
 @import "compositions/flow.css";
+@import "compositions/switcher.css";
 @import "blocks/hero.css";
 @import "blocks/button.css";
+@import "blocks/prose.css";

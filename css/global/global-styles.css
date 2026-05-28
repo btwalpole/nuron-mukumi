@@ -16,7 +16,7 @@
   --stroke: 1px solid var(--dark);
 
   --wrapper-max-width: 1880px;
-  --gutter: var(--space-m-l);
+  --gutter: var(--space-s-xl);
 
   /* -- Fluid Typography Scale -- */
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -47,9 +47,9 @@
   --leading-loose: 1.7;
 
   /* -- Fluid Spacing Scale -- */
-  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.75,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.25,1.5|2|3|4|6,s-l|s-xl&g=s,l,xl,12 */
 
-  --space-2xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+  --space-2xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
   --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
   --space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
   --space-m: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
@@ -59,7 +59,7 @@
   --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
 
   /* One-up pairs */
-  --space-2xs-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+  --space-2xs-xs: clamp(0.25rem, 0.0109rem + 1.1957vw, 0.9375rem);
   --space-xs-s: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
   --space-s-m: clamp(1rem, 0.6957rem + 1.5217vw, 1.875rem);
   --space-m-l: clamp(1.5rem, 1.1522rem + 1.7391vw, 2.5rem);
@@ -69,6 +69,7 @@
 
   /* Custom pairs */
   --space-s-l: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
+  --space-s-xl: clamp(1rem, 0.0435rem + 4.7826vw, 3.75rem);
   /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.5|0.25,2|4|6|8|20,s-l&g=s,l,xl,12 */
   /* 
   --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
@@ -137,10 +138,7 @@ h2 {
 
 blockquote q {
   font-family: "DM Serif Text", serif;
-  font-size: var(--size-step-1);
-}
-
-blockquote q {
+  font-size: var(--size-step-0);
   font-style: normal;
 }
 
@@ -151,7 +149,7 @@ blockquote {
 }
 
 blockquote footer {
-  margin-block-start: var(--space-s);
+  margin-block-start: var(--space-2xs);
   font-size: var(--size-step-0);
 }
 

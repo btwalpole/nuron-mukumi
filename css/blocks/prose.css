@@ -1,5 +1,5 @@
 .prose {
-  --flow-space: var(--space-l);
+  --flow-space: var(--space-m);
 }
 
 .prose :is(h1, h2, h3) {
@@ -18,7 +18,7 @@ so that the content looks like part of a section.
  and then targeting any direct sibling (+ * combinators) that don’t have a class :not([class]). 
  With those selected, we reduce the space by stepping down the spacing scale.*/
 .prose :is(h1, h2, h3, h4) + *:not([class]) {
-  --flow-space: var(--space-m);
+  --flow-space: var(--space-s);
 }
 
 /* Add more space on and around figures and tables */
@@ -28,8 +28,12 @@ so that the content looks like part of a section.
 }
 
 /* Add more space to headings on block start */
-.prose * + :is(h1, h2, h3, h4):not([class]) {
+/* .prose * + :is(h1, h2, h3, h4):not([class]) {
   --flow-space: var(--space-xl);
+} */
+
+.prose .eyebrow + :is(h1, h2, h3, h4) {
+  --flow-space: 0;
 }
 
 .prose :is(ul, ol):not([class]) li + li,

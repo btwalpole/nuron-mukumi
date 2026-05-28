@@ -13,12 +13,12 @@
   display: inline-flex;
   gap: var(--button-gutter);
   align-items: center;
+  justify-content: center;
   line-height: var(--leading-flat);
   cursor: pointer;
   text-decoration: none;
   font-family: "DM Serif Text";
   font-size: var(--size-step-1);
-  /* font-weight: var(--font-bold); */
 }
 
 .button:hover {
