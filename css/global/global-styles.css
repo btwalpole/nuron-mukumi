@@ -105,6 +105,7 @@ main {
   color: var(--dark);
   font-size: var(--size-step-0);
   line-height: var(--leading-standard);
+  --flow-space: var(--space-2xl);
 }
 
 :is(h1, h2, h3, h4) {

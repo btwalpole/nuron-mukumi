@@ -1,8 +1,9 @@
 .switcher {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--switcher-gap, 2rem);
 }
 
 .switcher > * {
-  flex: 1 1 30rem;
+  flex: 1 1 var(--switcher-target-width, 20rem);
 }
