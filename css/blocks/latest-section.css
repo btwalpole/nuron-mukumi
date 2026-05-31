@@ -1,4 +1,15 @@
 .latest-section {
-  --switcher-gap: 8rem;
+  --switcher-gap: var(--section-space);
   --switcher-target-width: 20rem;
+}
+
+album img {
+  aspect-ratio: 1000/905;
+  width: 50%;
+}
+
+.latest-section .album {
+  --switcher-gap: 1rem;
+  --switcher-target-width: 5rem;
+  /* display: flex; flex-direction: row; gap: var(--space-s)" */
 }

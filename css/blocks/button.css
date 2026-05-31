@@ -19,6 +19,7 @@
   text-decoration: none;
   font-family: "DM Serif Text";
   font-size: var(--size-step-1);
+  max-height: fit-content;
 }
 
 .button:hover {

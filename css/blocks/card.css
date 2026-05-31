@@ -1,0 +1,22 @@
+.card {
+  --flow-space: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gutter, 1rem);
+  background: white;
+  padding: var(--space-s-m);
+}
+
+.card__eyebrow {
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  color: var(--dark-grey);
+  letter-spacing: var(--uppercase-kerning);
+}
+
+.card__subhead {
+  --flow-space: 0;
+  font-style: italic;
+  color: var(--dark-grey);
+}

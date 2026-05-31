@@ -2,7 +2,8 @@
   /* Colours */
   --light-grey: #f2f2f2;
   --mid-grey: #e5e4e4;
-  --dark-grey: #7d7d7d;
+  --grey: #7d7d7d;
+  --dark-grey: #525252;
   --dark: #272727;
 
   --transition-base: 250ms ease;
@@ -17,6 +18,7 @@
 
   --wrapper-max-width: 1880px;
   --gutter: var(--space-s-xl);
+  --section-space: var(--space-2xl-3xl);
 
   /* -- Fluid Typography Scale -- */
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -70,42 +72,23 @@
   /* Custom pairs */
   --space-s-l: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
   --space-s-xl: clamp(1rem, 0.0435rem + 4.7826vw, 3.75rem);
-  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.5|0.25,2|4|6|8|20,s-l&g=s,l,xl,12 */
-  /* 
-  --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
-  --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
-  --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
-  --space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
-  --space-m: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
-  --space-l: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
-  --space-xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
-  --space-2xl: clamp(8rem, 7.3043rem + 3.4783vw, 10rem);
-  --space-3xl: clamp(20rem, 18.2609rem + 8.6957vw, 25rem);
-
-  --space-3xs-2xs: clamp(0.25rem, 0.1196rem + 0.6522vw, 0.625rem);
-  --space-2xs-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
-  --space-xs-s: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
-  --space-s-m: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
-  --space-m-l: clamp(2rem, 0.9565rem + 5.2174vw, 5rem);
-  --space-l-xl: clamp(4rem, 2.7826rem + 6.087vw, 7.5rem);
-  --space-xl-2xl: clamp(6rem, 4.6087rem + 6.9565vw, 10rem);
-  --space-2xl-3xl: clamp(8rem, 2.087rem + 29.5652vw, 25rem);
-
-
-  --space-s-l: clamp(1rem, -0.3913rem + 6.9565vw, 5rem); */
 }
 
 body {
   margin: 0;
   font-family: "Source Sans 3", sans-serif;
+  background: var(--light-grey);
 }
 
 main {
-  background: var(--light-grey);
   color: var(--dark);
   font-size: var(--size-step-0);
   line-height: var(--leading-standard);
   --flow-space: var(--space-2xl);
+}
+
+section {
+  margin-bottom: var(--section-space);
 }
 
 :is(h1, h2, h3, h4) {
@@ -162,6 +145,8 @@ ol {
 ul:not([class]) {
   padding-inline-start: 1.7ch;
   list-style-type: disc;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 ul:not([class]) > li {

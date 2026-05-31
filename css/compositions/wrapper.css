@@ -5,6 +5,6 @@ A common wrapper/container
 .wrapper {
   margin-inline: auto;
   max-width: var(--wrapper-max-width, 1880px);
-  padding: var(--gutter);
+  padding: 0 var(--gutter);
   position: relative;
 }
