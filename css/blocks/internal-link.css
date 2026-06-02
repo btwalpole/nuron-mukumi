@@ -1,0 +1,23 @@
+.internal-link {
+  font-family: "DM Serif Text";
+  font-style: italic;
+  text-underline-offset: 0.1lh;
+  text-decoration-skip-ink: auto;
+  color: var(--dark-grey);
+}
+
+.internal-link:hover {
+  text-underline-offset: 0.2lh;
+}
+
+.internal-link::after {
+  background-color: currentColor;
+  content: "" / "(arrow)";
+  display: inline-block;
+  margin-block-end: -0.5ch;
+  margin-inline-start: 0.8ch;
+  mask: url('data:image/svg+xml, <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  mask-size: cover;
+  height: 1.1em;
+  width: 1.1em;
+}
