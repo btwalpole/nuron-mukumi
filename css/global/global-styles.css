@@ -143,7 +143,7 @@ ol {
 }
 
 ul:not([class]) {
-  padding-inline-start: 1.7ch;
+  /*padding-inline-start: 1.7ch;*/
   list-style-type: disc;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;

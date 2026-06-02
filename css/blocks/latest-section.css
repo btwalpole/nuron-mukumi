@@ -3,9 +3,10 @@
   --switcher-target-width: 20rem;
 }
 
-album img {
+.latest-section img {
   aspect-ratio: 1000/905;
   width: 50%;
+  align-self: flex-start;
 }
 
 .latest-section .album {
