@@ -1,0 +1,26 @@
+.site-foot {
+  background-color: var(--dark);
+  color: var(--light-grey);
+  padding: var(--space-l-xl) 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.footer-header {
+  font-weight: 400;
+  color: var(--light-grey);
+  font-size: var(--size-step-7);
+  letter-spacing: 0.03em;
+  line-height: 0.8;
+  font-family: "DM Serif Display";
+}
+
+.site-foot ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

@@ -23,7 +23,7 @@
 }
 
 .button:hover {
-  filter: brightness(115%);
+  filter: brightness(125%);
 }
 
 .button:active {
@@ -35,4 +35,11 @@
   --button-text: var(--light-grey);
   --focus-color: var(--dark);
   border: none;
+}
+
+.button[data-button-variant="dark-footer"] {
+  --button-bg: var(--dark);
+  --button-text: var(--light-grey);
+  --focus-color: var(--dark);
+  border: 1px solid var(--light-grey);
 }

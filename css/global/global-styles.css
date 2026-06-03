@@ -1,7 +1,8 @@
 :root {
   /* Colours */
   --light-grey: #f2f2f2;
-  --mid-grey: #e5e4e4;
+  --midlight-grey: #e5e4e4;
+  --mid-grey: #b2b2b2;
   --grey: #7d7d7d;
   --dark-grey: #525252;
   --dark: #272727;
@@ -87,9 +88,9 @@ main {
   --flow-space: var(--space-2xl);
 }
 
-section {
+/* section {
   margin-bottom: var(--section-space);
-}
+} */
 
 :is(h1, h2, h3, h4) {
   line-height: var(--leading-fine);
@@ -234,7 +235,7 @@ a:not([class]):hover {
 
 hr {
   border: none;
-  border-block-start: var(--grey) 1px solid;
+  border-block-start: var(--mid-grey) 1px solid;
   margin-block: var(--flow-space, var(--space-xl));
 }
 

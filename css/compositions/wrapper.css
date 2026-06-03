@@ -8,3 +8,10 @@ A common wrapper/container
   padding: 0 var(--gutter);
   position: relative;
 }
+
+.main-wrapper {
+  margin-inline: auto;
+  max-width: var(--wrapper-max-width, 1880px);
+  padding: var(--space-l-xl) var(--gutter);
+  position: relative;
+}

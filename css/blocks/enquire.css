@@ -1,0 +1,11 @@
+.enquire {
+  --switcher-gap: var(--section-space);
+  --switcher-target-width: 20rem;
+}
+
+.enquire img {
+  aspect-ratio: 800/1067;
+  align-self: flex-start;
+  max-width: clamp(10rem, 100%, 40rem);
+  overflow: auto;
+}
