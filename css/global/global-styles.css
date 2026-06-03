@@ -107,7 +107,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--size-step-2);
+  font-size: var(--size-step-1);
   max-width: 35ch;
 }
 
@@ -234,7 +234,7 @@ a:not([class]):hover {
 
 hr {
   border: none;
-  border-block-start: var(--stroke, 1px solid);
+  border-block-start: var(--grey) 1px solid;
   margin-block: var(--flow-space, var(--space-xl));
 }
 

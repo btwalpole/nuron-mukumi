@@ -18,7 +18,7 @@
   cursor: pointer;
   text-decoration: none;
   font-family: "DM Serif Text";
-  font-size: var(--size-step-1);
+  font-size: var(--size-step-0);
   max-height: fit-content;
 }
 
