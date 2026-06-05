@@ -24,3 +24,11 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.site-foot {
+  /* Text Highlight Styles */
+  ::selection {
+    color: var(--dark);
+    background: var(--light-grey);
+  }
+}
