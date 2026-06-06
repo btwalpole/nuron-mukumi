@@ -1,0 +1,1037 @@
+/* Modern reset: https://piccalil.li/blog/a-more-modern-css-reset/ */
+
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block: 0;
+}
+
+blockquote {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+
+/* img,
+picture {
+  max-width: 100%;
+  display: block;
+} */
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+  /* Colours */
+  --light-grey: #f2f2f2;
+  --midlight-grey: #e5e4e4;
+  --mid-grey: #b2b2b2;
+  --grey: #7d7d7d;
+  --dark-grey: #525252;
+  --dark: #272727;
+
+  --transition-base: 250ms ease;
+  --transition-movement: 200ms linear;
+  --transition-fade: 300ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
+  --radius-s: 0.2rem;
+  --radius-m: 0.75rem;
+  --radius-l: 2.5rem;
+  --uppercase-kerning: 0.04ch;
+  --stroke: 1px solid var(--dark);
+
+  --wrapper-max-width: 1880px;
+  --gutter: var(--space-s-xl);
+  --section-space: var(--space-2xl-3xl);
+
+  /* -- Fluid Typography Scale -- */
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --size-step--2: clamp(0.64rem, 0.5843rem + 0.2783vw, 0.8rem);
+  --size-step--1: clamp(0.8rem, 0.7304rem + 0.3478vw, 1rem);
+  --size-step-0: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+  --size-step-1: clamp(1.25rem, 1.1413rem + 0.5435vw, 1.5625rem);
+  --size-step-2: clamp(1.5625rem, 1.4266rem + 0.6793vw, 1.9531rem);
+  --size-step-3: clamp(1.9531rem, 1.7833rem + 0.8492vw, 2.4414rem);
+  --size-step-4: clamp(2.4414rem, 2.2291rem + 1.0615vw, 3.0518rem);
+  --size-step-5: clamp(3.0518rem, 2.7864rem + 1.3269vw, 3.8147rem);
+  --size-step-6: clamp(3.8147rem, 3.483rem + 1.6586vw, 4.7684rem);
+  --size-step-7: clamp(4.7684rem, 4.3537rem + 2.0732vw, 5.9605rem);
+  --size-step-8: clamp(5.9605rem, 5.4422rem + 2.5915vw, 7.4506rem);
+  --size-step-9: clamp(7.4506rem, 6.8027rem + 3.2394vw, 9.3132rem);
+
+  /* -- Font Weights -- */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+  --font-black: 900;
+
+  /* -- Leading -- */
+  --leading-micro: 0.85;
+  --leading-flat: 1;
+  --leading-fine: 1.2;
+  --leading-standard: 1.4;
+  --leading-loose: 1.7;
+
+  /* -- Fluid Spacing Scale -- */
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.25,1.5|2|3|4|6,s-l|s-xl&g=s,l,xl,12 */
+
+  --space-2xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+  --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+  --space-s: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+  --space-m: clamp(1.5rem, 1.3696rem + 0.6522vw, 1.875rem);
+  --space-l: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
+  --space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
+  --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
+  --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
+
+  /* One-up pairs */
+  --space-2xs-xs: clamp(0.25rem, 0.0109rem + 1.1957vw, 0.9375rem);
+  --space-xs-s: clamp(0.75rem, 0.5761rem + 0.8696vw, 1.25rem);
+  --space-s-m: clamp(1rem, 0.6957rem + 1.5217vw, 1.875rem);
+  --space-m-l: clamp(1.5rem, 1.1522rem + 1.7391vw, 2.5rem);
+  --space-l-xl: clamp(2rem, 1.3913rem + 3.0435vw, 3.75rem);
+  --space-xl-2xl: clamp(3rem, 2.3043rem + 3.4783vw, 5rem);
+  --space-2xl-3xl: clamp(4rem, 2.7826rem + 6.087vw, 7.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
+  --space-s-xl: clamp(1rem, 0.0435rem + 4.7826vw, 3.75rem);
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  background: var(--light-grey);
+}
+
+main {
+  color: var(--dark);
+  font-size: var(--size-step-0);
+  line-height: var(--leading-standard);
+  --flow-space: var(--space-2xl);
+}
+
+/* section {
+  margin-bottom: var(--section-space);
+} */
+
+:is(h1, h2, h3, h4) {
+  line-height: var(--leading-fine);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--size-step-6);
+  max-width: 20ch;
+}
+
+h2 {
+  font-size: var(--size-step-3);
+  max-width: 35ch;
+}
+
+h3 {
+  font-size: var(--size-step-1);
+  max-width: 35ch;
+}
+
+:is(h4, h5, h6) {
+  font-size: var(--size-step-1);
+}
+
+h1,
+h2 {
+  font-family: "DM Serif Display", serif;
+}
+
+blockquote q {
+  font-family: "DM Serif Text", serif;
+  font-size: var(--size-step-0);
+  font-style: normal;
+}
+
+blockquote {
+  padding-inline-start: 1em;
+  border-inline-start: 0.15em solid;
+  margin-inline: 0;
+}
+
+blockquote footer {
+  margin-block-start: var(--space-2xs);
+  font-size: var(--size-step-0);
+}
+
+ul,
+ol {
+  padding-inline-start: 1em;
+}
+
+ul:not([class]) {
+  /*padding-inline-start: 1.7ch;*/
+  list-style-type: disc;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+ul:not([class]) > li {
+  padding-inline-start: var(--space-2xs);
+}
+
+:is(ol, ul):not([class]) li + * {
+  margin-block-start: var(--flow-space, var(--space-2xs));
+}
+
+ul ::marker {
+  font-size: 0.8lh;
+}
+
+ol ::marker {
+  font-size: 1em;
+  font-weight: var(--font-bold);
+}
+
+/* Lists with classes and roles will be out of standard flow, so remove the default spacing */
+
+[role="list"][class],
+[role="tablist"][class] {
+  margin-block: 0;
+  padding: 0;
+}
+
+:is(video, iframe[src*="youtube"], iframe[src*="vimeo"]) {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+figcaption {
+  padding-block-start: 0.5em;
+  font-size: var(--size-step-0);
+  font-family: monospace;
+}
+
+a:not([class]):hover {
+  text-underline-offset: 0.2lh;
+}
+
+:is(h1, h2, h3, h4) a:not([class]) {
+  text-decoration-thickness: 0.1ex;
+  text-underline-offset: 0.2ex;
+}
+
+:is(h1, h2, h3, h4) a:not([class]):hover {
+  text-underline-offset: 0.3ex;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-color, currentColor);
+  outline-offset: var(--focus-offset, 0.2lh);
+}
+
+/* Firefox is the only browser that doesn't outline the whole element unless you make it display: inline-block. That in itself causes multiple flow issues so we can detect it, using its own vendor prefix and reduce focus offset
+*/
+
+@supports (-moz-appearance: none) {
+  :root {
+    --focus-offset: 0.08em;
+  }
+}
+
+:target {
+  scroll-margin-block: 5lh;
+}
+
+/* Text Highlight Styles */
+
+::selection {
+  color: var(--light-grey);
+  background: var(--dark);
+}
+
+hr {
+  border: none;
+  border-block-start: var(--mid-grey) 1px solid;
+  margin-block: var(--flow-space, var(--space-xl));
+}
+
+svg:not([class]) {
+  width: auto;
+  height: 1lh;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+svg[role="img"][width][height] {
+  width: revert;
+  height: revert;
+  background: var(--color-light);
+  padding: var(--space-xs);
+}
+
+table {
+  border: var(--stroke);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: var(--font-bold);
+  line-height: var(--leading-fine);
+}
+
+thead th {
+  padding-block: var(--space-s);
+}
+
+td,
+th {
+  padding: var(--space-xs) var(--space-s);
+}
+
+th:not(:only-of-type) {
+  border-block-end: var(--stroke);
+}
+
+th:only-of-type {
+  border-inline-end: var(--stroke);
+}
+
+:is(th, td) ~ :is(th, td) {
+  border-inline-start: var(--stroke);
+}
+
+tr + tr :is(th, td) {
+  border-block-start: var(--stroke);
+}
+
+caption {
+  caption-side: bottom;
+  margin-block-start: var(--space-s);
+}
+
+/* There's a .flow composition, but this prevents forms from having to have that applied where markup is harder to control in certain systems. It still uses the --flow-space variables though to make managing space easier */
+
+form > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+form > *:not(input[type="hidden"]) + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+:is(input, select, textarea) {
+  accent-color: var(--dark);
+}
+
+:is(
+  input:not([type="checkbox"], [type="radio"], [type="color"]),
+  select,
+  textarea
+) {
+  padding: 0.5em 0.8em;
+  border-radius: var(--radius-s, 0);
+  border: var(--stroke-solid, 1px solid);
+  background: var(--dark);
+  color: var(--light-grey);
+  width: 100%;
+
+  &::placeholder {
+    color: var(--mid-grey);
+  }
+}
+
+label {
+  line-height: var(--leading-fine);
+  font-weight: var(--font-medium);
+}
+
+label::after {
+  content: "\A";
+  white-space: pre;
+}
+
+/* Usually label wraps checkbox and radio buttons, so we give ourselves more layout and text-flow control with flex */
+
+label:has(input) {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-s);
+  font-weight: var(--font-normal);
+}
+
+label:has(input) + label:has(input) {
+  --flow-space: var(--space-s-m);
+}
+
+/* Slightly adjusts the vertical position of the check/radio */
+
+label:has(input) input {
+  transform: translateY(-0.1ex);
+}
+
+input:disabled {
+  background: var(--color-mid);
+}
+
+input:disabled,
+label input:disabled + * {
+  cursor: not-allowed;
+}
+
+fieldset {
+  border: var(--stroke);
+  padding: var(--space-s);
+}
+
+legend {
+  font-weight: var(--font-medium);
+  padding-inline: var(--space-xs);
+}
+
+summary {
+  font-weight: var(--font-bold);
+  cursor: pointer;
+}
+
+details[open] summary {
+  margin-block-end: var(--space-s);
+}
+
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("../../fonts/DMSerifDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Serif Text";
+  src: url("../../fonts/DMSerifText-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Serif Text";
+  src: url("../../fonts/DMSerifText-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../../fonts/SourceSans3-Regular.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../../fonts/SourceSans3-Medium.otf.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../../fonts/SourceSans3-It.otf.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../../fonts/SourceSans3-Bold.otf.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*
+WRAPPER COMPOSITION 
+A common wrapper/container
+*/
+
+.wrapper {
+  margin-inline: auto;
+  max-width: var(--wrapper-max-width, 1880px);
+  padding: 0 var(--gutter);
+  position: relative;
+}
+
+.main-wrapper {
+  margin-inline: auto;
+  max-width: var(--wrapper-max-width, 1880px);
+  padding: var(--space-l-xl) var(--gutter);
+  position: relative;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+/*
+REPEL
+A little layout that pushes items away from each other where
+there is space in the viewport and stacks on small viewports
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-m)): This defines the space
+between each item.
+
+--repel-vertical-alignment (center): How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+
+.repel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: var(--repel-vertical-alignment, center);
+  /* align-items: var(--repel-vertical-alignment, center); */
+  gap: var(--gutter, 1rem);
+  /* gap: var(--gutter, var(--space-m)); */
+}
+
+.repel[data-nowrap] {
+  flex-wrap: nowrap;
+}
+
+/* 
+FLOW COMPOSITION 
+Like the Every Layout stack: https://every-layout.dev/layouts/stack/
+Info about this implementation: https://piccalil.li/blog/my-favourite-3-lines-of-css/ 
+*/
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, 2rem);
+}
+
+.switcher > * {
+  flex: 1 1 var(--switcher-target-width, 20rem);
+}
+
+/* AUTO GRID
+Related Every Layout: https://every-layout.dev/layouts/grid/
+More info on the flexible nature: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+A flexible layout that will create an auto-fill grid with
+configurable grid item sizes
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-m)): This defines the space
+between each item.
+
+--grid-min-item-size (14rem): How large each item should be
+ideally, as a minimum.
+
+--grid-placement (auto-fill): Set either auto-fit or auto-fill
+to change how empty grid tracks are handled */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+  gap: var(--gutter, var(--space-l));
+}
+
+/* A split 50/50 layout */
+
+.grid[data-layout="50-50"] {
+  --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 50vw, 33rem);
+}
+
+/* Three column grid layout */
+
+.grid[data-layout="thirds"] {
+  --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 33%, 20rem);
+}
+
+/* .hero {
+  color: var(--light-grey);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-size: cover !important;
+  background:
+    linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 38%,
+      rgba(0, 0, 0, 0.65) 80%,
+      rgba(0, 0, 0, 0.65) 100%
+    ),
+    url("../../images/hero.jpg") no-repeat center center scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 var(--gutter) var(--gutter) var(--gutter);
+} */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  overflow: hidden;
+  color: var(--light-grey);
+  padding: var(--gutter);
+}
+
+/* Full-bleed media layer */
+
+.hero__media,
+.hero__image,
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 38%,
+    rgba(0, 0, 0, 0.65) 80%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .hero::before {
+    background: linear-gradient(
+      210deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 90%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  }
+}
+
+/* Replicates background-size: cover */
+
+.hero__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Keep content above image */
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.hero__content > .flow {
+  --flow-space: var(--space-l);
+}
+
+h1 {
+  font-weight: 400;
+  color: var(--light-grey);
+  font-size: var(--size-step-7);
+  letter-spacing: 0.03em;
+  line-height: 0.8;
+}
+
+h1 + p {
+  color: var(--midlight-grey);
+  font-size: var(--size-step-0);
+  letter-spacing: 0.07em;
+  margin-block-start: 0.4em;
+}
+
+.cta-quote {
+  font-size: var(--size-step-1);
+  font-family: "DM Serif Text";
+}
+
+.cta-social-proof-link {
+  display: inline-flex;
+  gap: 0.2em;
+
+  a {
+    color: var(--midlight-grey);
+    font-size: var(--size-step-0);
+  }
+}
+
+/* .hero button {
+  background: none;
+  display: inline-block;
+  border: 1px solid var(--light-grey);
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  text-decoration: none;
+  color: var(--light-grey);
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.hero button:hover {
+  background: #63b6b8;
+}
+.hero button:focus {
+  outline: 1px solid var(--light-grey);
+  outline-offset: -4px;
+} */
+
+.button {
+  --button-bg: transparent;
+  --button-text: var(--light-grey);
+  --button-x-padding: 1.5em;
+  --button-y-padding: 0.75em;
+  --button-gutter: 0.5ch;
+  --focus-color: var(--light-grey);
+
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--light-grey);
+  padding: var(--button-y-padding) var(--button-x-padding);
+  display: inline-flex;
+  gap: var(--button-gutter);
+  align-items: center;
+  justify-content: center;
+  line-height: var(--leading-flat);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "DM Serif Text";
+  font-size: var(--size-step-0);
+  max-height: fit-content;
+}
+
+.button:hover {
+  filter: brightness(125%);
+}
+
+.button:active {
+  transform: scale(99%);
+}
+
+.button[data-button-variant="dark"] {
+  --button-bg: var(--dark);
+  --button-text: var(--light-grey);
+  --focus-color: var(--dark);
+  border: none;
+}
+
+.button[data-button-variant="dark-footer"] {
+  --button-bg: var(--dark);
+  --button-text: var(--light-grey);
+  --focus-color: var(--dark);
+  border: 1px solid var(--light-grey);
+}
+
+.prose {
+  --flow-space: var(--space-m);
+}
+
+.prose :is(h1, h2, h3) {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.prose :is(p, li, dl, figcaption, blockquote) {
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+
+/**I like to reduce the space of anything that follows a heading, 
+so that the content looks like part of a section.
+ We can do that by first looking for headings one through to four, 
+ and then targeting any direct sibling (+ * combinators) that don’t have a class :not([class]). 
+ With those selected, we reduce the space by stepping down the spacing scale.*/
+
+.prose :is(h1, h2, h3, h4) + *:not([class]) {
+  --flow-space: var(--space-s);
+}
+
+/* Add more space on and around figures and tables */
+
+.prose :is(figure, table),
+.prose :is(figure, table) + * {
+  --flow-space: var(--space-2xl);
+}
+
+/* Add more space to headings on block start */
+
+/* .prose * + :is(h1, h2, h3, h4):not([class]) {
+  --flow-space: var(--space-xl);
+} */
+
+.prose .eyebrow + :is(h1, h2, h3, h4) {
+  --flow-space: 0;
+}
+
+.prose :is(ul, ol):not([class]) li + li,
+.prose :is(ul, ol):not([class]) li > :is(ol, ul) {
+  --flow-space: var(--space-xs);
+}
+
+.prose hr {
+  --flow-space: var(--space-2xl);
+}
+
+.prose :is(img, picture, video) {
+  border: var(--stroke);
+}
+
+@media (min-width: 760px) {
+  .prose :is(h1, h2, h3) {
+    overflow-wrap: unset;
+    hyphens: unset;
+  }
+}
+
+.latest-section {
+  --switcher-gap: var(--section-space);
+  --switcher-target-width: 20rem;
+}
+
+.latest-section img {
+  aspect-ratio: 1000/905;
+  width: 50%;
+  align-self: flex-start;
+}
+
+.latest-section .album {
+  --switcher-gap: 1rem;
+  --switcher-target-width: 5rem;
+  /* display: flex; flex-direction: row; gap: var(--space-s)" */
+}
+
+.card {
+  --flow-space: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gutter, 1rem);
+  background: white;
+  padding: var(--space-s-m);
+}
+
+.card__eyebrow {
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  color: var(--dark-grey);
+  letter-spacing: var(--uppercase-kerning);
+}
+
+.card__subhead {
+  --flow-space: 0;
+  font-style: italic;
+  color: var(--dark-grey);
+}
+
+.card[data-card-variant="article"] {
+  .card__eyebrow {
+    font-weight: var(--font-regular);
+    color: var(--grey);
+  }
+}
+
+.internal-link {
+  font-family: "DM Serif Text";
+  font-style: italic;
+  text-underline-offset: 0.1lh;
+  text-decoration-skip-ink: auto;
+  color: var(--dark-grey);
+}
+
+.internal-link:hover {
+  text-underline-offset: 0.2lh;
+}
+
+.internal-link::after {
+  background-color: currentColor;
+  content: "" / "(arrow)";
+  display: inline-block;
+  margin-block-end: -0.5ch;
+  margin-inline-start: 0.8ch;
+  mask: url('data:image/svg+xml, <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  mask-size: cover;
+  height: 1.1em;
+  width: 1.1em;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  color: var(--dark-grey);
+}
+
+/* .press-and-praise .grid {
+     --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 50vw, 33rem);
+} */
+
+.enquire {
+  --switcher-gap: var(--section-space);
+  --switcher-target-width: 20rem;
+}
+
+.enquire img {
+  aspect-ratio: 800/1067;
+  align-self: flex-start;
+  max-width: clamp(10rem, 100%, 40rem);
+  overflow: auto;
+}
+
+.site-foot {
+  background-color: var(--dark);
+  color: var(--light-grey);
+  padding: var(--space-l-xl) 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.footer-header {
+  font-weight: 400;
+  color: var(--light-grey);
+  font-size: var(--size-step-7);
+  letter-spacing: 0.03em;
+  line-height: 0.8;
+  font-family: "DM Serif Display";
+}
+
+.site-foot ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-foot {
+  /* Text Highlight Styles */
+  ::selection {
+    color: var(--dark);
+    background: var(--light-grey);
+  }
+}
