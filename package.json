@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "build:css": "postcss src/css/global.css -o dist/css/global.css",
+    "build": "npm run build:css && eleventy",
+    "start": "npm run build:css && eleventy --serve",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/nuron-mukumi/"
+  },
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.15",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1"
+  }
+}

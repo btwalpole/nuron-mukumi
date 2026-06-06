@@ -1,0 +1,260 @@
+{% extends "layouts/base.html" %} {% block content %}
+<section class="hero">
+  <picture class="hero__media">
+    <!-- Different image for large screens -->
+    <source
+      media="(min-width: 601px)"
+      srcset="images/hero-wide.jpg"
+      sizes="100vw"
+    />
+    <source media="(max-width: 600px)" srcset="images/hero-tall.jpg" />
+    <!-- Default/mobile -->
+    <img
+      src="images/hero-tall.jpg"
+      srcset="images/hero-tall.jpg"
+      sizes="100vw"
+      alt=""
+      class="hero__image"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </picture>
+
+  <div class="hero__content">
+    <header class="">
+      <nav aria-label="primary" class="repel">
+        <a href="#">
+          <img src="images/logo.svg" alt="Nuron Mukumi Logo" width="80px" />
+        </a>
+        <!-- <ul role="list">
+            <li><a href="#">BIOGRAPHY</a></li>
+            <li><a href="#">CONCERTS</a></li>
+            <li><a href="#">REPERTOIRE</a></li>
+          </ul> -->
+      </nav>
+    </header>
+    <div class="flow">
+      <div>
+        <h1>
+          Nuron <br />
+          Mukumi
+        </h1>
+        <p>CLASSICAL PIANIST</p>
+      </div>
+      <div>
+        <p class="cta-quote">“Intoxicating Virtuosity.”</p>
+        <div class="cta-social-proof-link">
+          <p>—</p>
+          <a
+            href="https://www.spiegel.de/kultur/musik/klassik-neues-von-nuron-mukumi-und-daniil-trifonov-a-1236550.html"
+            >Spiegel Online</a
+          >
+        </div>
+      </div>
+      <a href="#enquire-section" class="button">Enquire for a performance</a>
+    </div>
+  </div>
+</section>
+<main class="main-wrapper">
+  <section class="switcher latest-section">
+    <div class="flow prose">
+      <p class="eyebrow">LATEST PERFORMANCE</p>
+      <h2>The National Symphony Orchestra of Ukraine</h2>
+      <p>
+        In January 2026, Nuron Mukumi gave another solidarity concert in Kyiv
+        with the National Symphony Orchestra of Ukraine.
+      </p>
+      <p>
+        At the National Philharmonic Hall of Ukraine, under the baton of
+        Volodymyr Sirenko, he performed Piano Concerto No. 5 in E flat Major by
+        Ludwig van Beethoven. Spending eight days in the capital, Nuron also ran
+        teaching masterclasses with young Ukrainian musicians.
+      </p>
+      <div>
+        <blockquote>
+          <q>
+            The orchestra continued its work despite sleepless nights under
+            incessant bombardment... They are countering the Russian aggressor
+            with their own civilization.
+          </q>
+          <footer>
+            <a
+              href="https://www.pizzicato.lu/nuron-mukumi-and-the-national-symphony-orchestra-of-ukraine-live-on-youtube/"
+              >Read the review in Pizzicato</a
+            >
+          </footer>
+        </blockquote>
+      </div>
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/XcHrnxagIYk?si=1yyp38fXMg-qqsou"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="flow prose">
+      <p class="eyebrow">LATEST ALBUM</p>
+      <h2>Portraits of Bowen</h2>
+      <p>
+        The English late Romantic composer York Bowen composed the recorded
+        pieces in 1938, but did not publish them until 1950. Bowen deliberately
+        did not subject his compositions to the spirit of the times, but instead
+        committed himself to beauty: “If modern life is ugly, then there is all
+        the more reason why music should bring beauty into it”.
+      </p>
+      <blockquote>
+        <q>
+          Mukumi masterfully commands the miniatures, drawn with an extremely
+          fine brush, and shines in both technically demanding and quiet,
+          lyrical passages: a revelation!
+        </q>
+        <footer>
+          <a href="https://taz.de/Neue-Musik-aus-Berlin/!6041370/"
+            >Read the review in taz.de</a
+          >
+        </footer>
+      </blockquote>
+      <div class="album switcher">
+        <img src="images/Portraits-of-Bowen-Nuron-Mukumi.jpg" />
+        <div>
+          <p>AWARD NOMINATIONS</p>
+          <ul role="list">
+            <li>
+              <a
+                href="https://www.icma-info.com/icma-jury-nominates-374-releases-for-the-2025-awards/"
+                >The International Classical Music Awards 2025</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.schallplattenkritik.de/bestenlisten/longlist/longlist-1-2025"
+                >The German Record Critics Award 2025</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a
+        class="button"
+        data-button-variant="dark"
+        href="https://open.spotify.com/album/1a4CGH83WLBR5Vudl0RKhi?si=H8BKBd48R4ulw2comIeJjw"
+        style="width: 100%"
+      >
+        Listen to the album on Spotify
+      </a>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <h2>Upcoming Concerts</h2>
+    <div style="padding: 2rem 0" class="grid" data-layout="thirds">
+      {% for concert in concerts %}
+      <article class="card">
+        <div class="flow">
+          <p class="card__eyebrow">{{concert.date}}</p>
+          <h3 class="card__heading">{{concert.orchestra}}</h3>
+          <p class="card__subhead">{{concert.venue}}</p>
+          <p class="card__description">{{concert.description}}</p>
+        </div>
+        <a class="button" data-button-variant="dark" href="{{concert.url}}">
+          Get tickets
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    <a class="internal-link" href="#">See the full schedule</a>
+  </section>
+  <hr />
+
+  <section class="press-and-praise">
+    <p class="eyebrow">INTERVIEW AND ARTICLES</p>
+    <h2>Press and Praise</h2>
+    <div style="padding: 2rem 0" class="grid" data-layout="thirds">
+      <article class="card" data-card-variant="article">
+        <div class="flow">
+          <p class="card__eyebrow">SEPTEMBER 2025 • Bad Vilbel, Germany</p>
+          <h3 class="card__heading">How an orchestral evening tells stories</h3>
+          <p class="card__subhead">
+            A review of Nuron’s performance with the German State Philharmonic
+            Orchestra of Rhineland-Palatinate
+          </p>
+          <blockquote>
+            <q>
+              Pianist Nuron Mukumi didn't approach the piano as a virtuoso
+              showman, but as a great lyricist with soulful playing. From the
+              very first movement, he impressed with a clear, nuanced touch:
+              never boisterous, never mannered, but imbued with inner passion.
+            </q>
+            <footer>
+              <a
+                href="https://onlinemerker.com/bad-vilbeler-vilco-deutsche-staatsphilharmonie-rheinland-pfalz-michael-francis-musikalische-leitung-nuron-mukumi-klavier-schubert-sibelius-beethoven/"
+                >Read the full review in Online Merker</a
+              >
+            </footer>
+          </blockquote>
+        </div>
+      </article>
+      <article class="card" data-card-variant="article">
+        <div class="flow">
+          <p class="card__eyebrow">May 2025 • Dunum, Germany</p>
+          <h3 class="card__heading">The Gezeitenkonzerte festival</h3>
+          <p class="card__subhead">
+            A review of Nuron’s performance of Rachmaninoff and Liszt as part of
+            Tidal Concerts 2025
+          </p>
+          <blockquote>
+            <q>
+              He delivered a masterful musical performance, impressively
+              showcasing the entire spectrum of Romantic piano artistry!
+              Especially with Rachmaninoff's Corelli Variations, piano and
+              pianist demonstrated their skill, projecting the powerful yet
+              delicately sensitive sounds into the room with beautiful
+              resonance.
+            </q>
+            <footer>
+              <a
+                href="https://klassik-begeistert.de/gezeitenkonzerte-2025-dunum-kirche-16-mai-2025/"
+                >Read the full review in Klassik Begeistert</a
+              >
+            </footer>
+          </blockquote>
+        </div>
+      </article>
+    </div>
+    <a class="internal-link" href="#">Read more articles</a>
+  </section>
+  <hr />
+  <section class="enquire" id="enquire-section">
+    <div class="switcher">
+      <div class="flow prose">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Enquire for a performance</h2>
+        <p>
+          To enquire about booking a performance, use the contact details below.
+        </p>
+        <div>
+          <p class="eyebrow">MOBILE</p>
+          <p>+49 15159433913</p>
+        </div>
+        <div>
+          <p class="eyebrow">EMAIL</p>
+          <p>info@nuronmukumi.com</p>
+        </div>
+      </div>
+      <img src="images/nuron-portrait.jpg" />
+    </div>
+  </section>
+</main>
+{% endblock %}
