@@ -3,7 +3,7 @@
     "build:css": "postcss src/css/global.css -o _site/css/global.css",
     "build": "npm run build:css && eleventy",
     "start": "npm run build:css && eleventy --serve",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/nuron-mukumi/"
+    "build-ghpages": "npm run build:css && npx @11ty/eleventy --pathprefix=/nuron-mukumi/"
   },
   "type": "module",
   "dependencies": {
