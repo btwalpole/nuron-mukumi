@@ -40,6 +40,7 @@
           Mukumi
         </h1>
         <p>CLASSICAL PIANIST</p>
+        <p>{{concerts.concerts.length}}</p>
       </div>
       <div>
         <p class="cta-quote">“Intoxicating Virtuosity.”</p>
@@ -160,15 +161,15 @@
   <section>
     <h2>Upcoming Concerts</h2>
     <div style="padding: 2rem 0" class="grid" data-layout="thirds">
-      {% for concert in concerts %}
+      {% for concert in strapi.concerts %}
       <article class="card">
         <div class="flow">
-          <p class="card__eyebrow">{{concert.date}}</p>
-          <h3 class="card__heading">{{concert.orchestra}}</h3>
-          <p class="card__subhead">{{concert.venue}}</p>
-          <p class="card__description">{{concert.description}}</p>
+          <p class="card__eyebrow">{{concert.Date}}</p>
+          <h3 class="card__heading">{{concert.Orchestra}}</h3>
+          <p class="card__subhead">{{concert.Venue}}</p>
+          <p class="card__description">{{concert.Description}}</p>
         </div>
-        <a class="button" data-button-variant="dark" href="{{concert.url}}">
+        <a class="button" data-button-variant="dark" href="{{concert.Link}}">
           Get tickets
         </a>
       </article>
