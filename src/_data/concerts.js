@@ -14,7 +14,7 @@ export default async () => {
       duration: "1d",
       type: "json",
     });
-    return { concerts: response.data };
+    return response.data ;
   } catch (err) {
     console.log(err);
     return [];

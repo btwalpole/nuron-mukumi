@@ -161,7 +161,7 @@
   <section>
     <h2>Upcoming Concerts</h2>
     <div style="padding: 2rem 0" class="grid" data-layout="thirds">
-      {% for concert in strapi.concerts %}
+      {% for concert in concerts %}
       <article class="card">
         <div class="flow">
           <p class="card__eyebrow">{{concert.Date}}</p>
@@ -183,56 +183,28 @@
     <p class="eyebrow">INTERVIEW AND ARTICLES</p>
     <h2>Press and Praise</h2>
     <div style="padding: 2rem 0" class="grid" data-layout="thirds">
+      {% for concert in concerts %}
       <article class="card" data-card-variant="article">
         <div class="flow">
-          <p class="card__eyebrow">SEPTEMBER 2025 • Bad Vilbel, Germany</p>
-          <h3 class="card__heading">How an orchestral evening tells stories</h3>
+          <p class="card__eyebrow">{{article.Date}} • {{article.Location}}</p>
+          <h3 class="card__heading">{{article.Title}}</h3>
           <p class="card__subhead">
-            A review of Nuron’s performance with the German State Philharmonic
-            Orchestra of Rhineland-Palatinate
+            {{article.Description}}
           </p>
           <blockquote>
             <q>
-              Pianist Nuron Mukumi didn't approach the piano as a virtuoso
-              showman, but as a great lyricist with soulful playing. From the
-              very first movement, he impressed with a clear, nuanced touch:
-              never boisterous, never mannered, but imbued with inner passion.
+              {{article.Quote}}
             </q>
             <footer>
               <a
-                href="https://onlinemerker.com/bad-vilbeler-vilco-deutsche-staatsphilharmonie-rheinland-pfalz-michael-francis-musikalische-leitung-nuron-mukumi-klavier-schubert-sibelius-beethoven/"
-                >Read the full review in Online Merker</a
+                href="{{article.Link_path}}"
+                >{{article.Link_text}}</a
               >
             </footer>
           </blockquote>
         </div>
       </article>
-      <article class="card" data-card-variant="article">
-        <div class="flow">
-          <p class="card__eyebrow">May 2025 • Dunum, Germany</p>
-          <h3 class="card__heading">The Gezeitenkonzerte festival</h3>
-          <p class="card__subhead">
-            A review of Nuron’s performance of Rachmaninoff and Liszt as part of
-            Tidal Concerts 2025
-          </p>
-          <blockquote>
-            <q>
-              He delivered a masterful musical performance, impressively
-              showcasing the entire spectrum of Romantic piano artistry!
-              Especially with Rachmaninoff's Corelli Variations, piano and
-              pianist demonstrated their skill, projecting the powerful yet
-              delicately sensitive sounds into the room with beautiful
-              resonance.
-            </q>
-            <footer>
-              <a
-                href="https://klassik-begeistert.de/gezeitenkonzerte-2025-dunum-kirche-16-mai-2025/"
-                >Read the full review in Klassik Begeistert</a
-              >
-            </footer>
-          </blockquote>
-        </div>
-      </article>
+      {% endfor %}
     </div>
     <a class="internal-link" href="#">Read more articles</a>
   </section>
