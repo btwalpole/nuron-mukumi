@@ -107,30 +107,25 @@
     </div>
     <div class="flow prose">
       <p class="eyebrow">LATEST ALBUM</p>
-      <h2>Portraits of Bowen</h2>
+      <h2>{{latestAlbum.Title}}</h2>
       <p>
-        The English late Romantic composer York Bowen composed the recorded
-        pieces in 1938, but did not publish them until 1950. Bowen deliberately
-        did not subject his compositions to the spirit of the times, but instead
-        committed himself to beauty: “If modern life is ugly, then there is all
-        the more reason why music should bring beauty into it”.
+        {{latestAlbum.Body}}
+
       </p>
       <blockquote>
         <q>
-          Mukumi masterfully commands the miniatures, drawn with an extremely
-          fine brush, and shines in both technically demanding and quiet,
-          lyrical passages: a revelation!
+                 {{latestAlbum.Quote.Text}}
         </q>
         <footer>
-          <a href="https://taz.de/Neue-Musik-aus-Berlin/!6041370/"
-            >Read the review in taz.de</a
+          <a href="{{latestAlbum.Quote.Link.Path}}"
+            > {{latestAlbum.Quote.Link.Text}}</a
           >
         </footer>
       </blockquote>
       <div class="album switcher">
-        <img src="images/Portraits-of-Bowen-Nuron-Mukumi.jpg" />
+        <img src="{{latestAlbum.Artwork.url}}" />
         <div>
-          <p>AWARD NOMINATIONS</p>
+          <p>{{latestAlbum.Subheader}}</p>
           <ul role="list">
             <li>
               <a
@@ -150,10 +145,10 @@
       <a
         class="button"
         data-button-variant="dark"
-        href="https://open.spotify.com/album/1a4CGH83WLBR5Vudl0RKhi?si=H8BKBd48R4ulw2comIeJjw"
+        href={{latestAlbum.Button.Path}}
         style="width: 100%"
       >
-        Listen to the album on Spotify
+        {{latestAlbum.Button.Text}}
       </a>
     </div>
   </section>
