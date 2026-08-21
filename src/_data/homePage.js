@@ -9,13 +9,14 @@ const client = createClient({
 
 export default async function () {
   return client.fetch(`
-    *[_type == "concert"] | order(date asc) {
+    *[_type == "homePage"][0] {
       _id,
-      title,
-      description,
-      date,
-      venue,
-      link
+      featuredConcert-> {
+        title,
+        quote,
+        youtubeId,
+        description,
+      },
     }
   `)
 }
