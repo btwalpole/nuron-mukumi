@@ -60,16 +60,9 @@
   <section class="switcher latest-section">
     <div class="flow prose">
       <p class="eyebrow">LATEST PERFORMANCE</p>
-      <h2>The National Symphony Orchestra of Ukraine</h2>
+      <h2>{{latestPerformance.Title}}</h2>
       <p>
-        In January 2026, Nuron Mukumi gave another solidarity concert in Kyiv
-        with the National Symphony Orchestra of Ukraine.
-      </p>
-      <p>
-        At the National Philharmonic Hall of Ukraine, under the baton of
-        Volodymyr Sirenko, he performed Piano Concerto No. 5 in E flat Major by
-        Ludwig van Beethoven. Spending eight days in the capital, Nuron also ran
-        teaching masterclasses with young Ukrainian musicians.
+        {{latestPerformance.Body}}
       </p>
       <div>
         <blockquote>
@@ -110,35 +103,30 @@
       <h2>{{latestAlbum.Title}}</h2>
       <p>
         {{latestAlbum.Body}}
-
       </p>
       <blockquote>
         <q>
-                 {{latestAlbum.Quote.Text}}
+          {{latestAlbum.Quote.Text}}
         </q>
         <footer>
-          <a href="{{latestAlbum.Quote.Link.Path}}"
+          <a href={{latestAlbum.Quote.Link.Path}}
             > {{latestAlbum.Quote.Link.Text}}</a
           >
         </footer>
       </blockquote>
       <div class="album switcher">
-        <img src="{{latestAlbum.Artwork.url}}" />
+        <img src={{latestAlbum.Artwork.url}} />
         <div>
           <p>{{latestAlbum.Subheader}}</p>
           <ul role="list">
-            <li>
-              <a
-                href="https://www.icma-info.com/icma-jury-nominates-374-releases-for-the-2025-awards/"
-                >The International Classical Music Awards 2025</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.schallplattenkritik.de/bestenlisten/longlist/longlist-1-2025"
-                >The German Record Critics Award 2025</a
-              >
-            </li>
+            {% for link in latestAlbum.Subheader_link %}
+              <li>
+                <a
+                  href={{link.Path}}
+                  >{{link.Text}}</a
+                >
+              </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
