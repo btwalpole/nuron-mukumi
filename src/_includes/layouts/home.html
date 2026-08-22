@@ -115,7 +115,7 @@
         </footer>
       </blockquote>
       <div class="album switcher">
-        <img src={{homePage.featuredAlbum.artwork}} />
+        <img src="{{ homePage.featuredAlbum.artwork | sanityImage }}" />
         <div>
           <p>{{homePage.featuredAlbum.supportingInfo.subheader}}</p>
           <ul role="list">
