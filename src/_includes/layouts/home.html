@@ -100,30 +100,30 @@
     </div>
     <div class="flow prose">
       <p class="eyebrow">LATEST ALBUM</p>
-      <h2>{{latestAlbum.Title}}</h2>
+      <h2>{{homePage.featuredAlbum.title}}</h2>
       <p>
-        {{latestAlbum.Body}}
+        {{homePage.featuredAlbum.description}}
       </p>
       <blockquote>
         <q>
-          {{latestAlbum.Quote.Text}}
+          {{homePage.featuredAlbum.quote.text}}
         </q>
         <footer>
-          <a href={{latestAlbum.Quote.Link.Path}}
-            > {{latestAlbum.Quote.Link.Text}}</a
+          <a href={{homePage.featuredAlbum.quote.link.url}}
+            > {{homePage.featuredAlbum.quote.link.text}}</a
           >
         </footer>
       </blockquote>
       <div class="album switcher">
-        <img src={{latestAlbum.Artwork.url}} />
+        <img src={{homePage.featuredAlbum.artwork}} />
         <div>
-          <p>{{latestAlbum.Subheader}}</p>
+          <p>{{homePage.featuredAlbum.supportingInfo.subheader}}</p>
           <ul role="list">
-            {% for link in latestAlbum.Subheader_link %}
+            {% for link in homePage.featuredAlbum.supportingInfo.links %}
               <li>
                 <a
-                  href={{link.Path}}
-                  >{{link.Text}}</a
+                  href={{link.url}}
+                  >{{link.text}}</a
                 >
               </li>
             {% endfor %}
@@ -133,10 +133,10 @@
       <a
         class="button"
         data-button-variant="dark"
-        href={{latestAlbum.Button.Path}}
+        href="{{homePage.featuredAlbum.link}}"
         style="width: 100%"
       >
-        {{latestAlbum.Button.Text}}
+        Listen to the album
       </a>
     </div>
   </section>
@@ -169,19 +169,19 @@
       {% for article in articles %}
       <article class="card" data-card-variant="article">
         <div class="flow">
-          <p class="card__eyebrow">{{article.Date}} • {{article.Location}}</p>
-          <h3 class="card__heading">{{article.Title}}</h3>
+          <p class="card__eyebrow">{{article.date}} • {{article.location}}</p>
+          <h3 class="card__heading">{{article.title}}</h3>
           <p class="card__subhead">
-            {{article.Description}}
+            {{article.description}}
           </p>
           <blockquote>
             <q>
-              {{article.Quote}}
+              {{article.quote.text}}
             </q>
             <footer>
               <a
-                href="{{article.Link_path}}"
-                >{{article.Link_text}}</a
+                href="{{article.quote.link.url}}"
+                >{{article.quote.link.text}}</a
               >
             </footer>
           </blockquote>

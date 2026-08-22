@@ -1,21 +1,21 @@
-import EleventyFetch from "@11ty/eleventy-fetch";
+import { createClient } from '@sanity/client'
 
-/**
- * Grabs the remote data for studio images and returns back
- * an array of objects
- *
- * @returns {Array} Empty or array of objects
- */
-export default async () => {
-  try {
-    let url = "https://sacred-candy-33d6634475.strapiapp.com/api/articles";
-    const response = await EleventyFetch(url, {
-      duration: "1d",
-      type: "json",
-    });
-    return response.data ;
-  } catch (err) {
-    console.log(err);
-    return [];
-  }
-};
+const client = createClient({
+  projectId: 'ct7ldo6w',
+  dataset: 'production',
+  useCdn: true,
+  apiVersion: '2026-03-01',
+})
+
+export default async function () {
+  return client.fetch(`
+    *[_type == "article"] | order(date asc) {
+      _id,
+      title,
+      description,
+      date,
+      location,
+      quote
+    }
+  `)
+}

@@ -8,7 +8,7 @@ const client = createClient({
 })
 
 export default async function () {
-  return client.fetch(`
+  const response = await client.fetch(`
     *[_type == "homePage"][0] {
       _id,
       featuredConcert-> {
@@ -17,6 +17,19 @@ export default async function () {
         youtubeId,
         description,
       },
+      featuredAlbum-> {
+        title,
+        quote,
+        description,
+        artwork,
+        link,
+        supportingInfo
+      },
     }
   `)
+
+console.log(JSON.stringify(response, null, 2))
+
+
+  return response
 }
