@@ -9,7 +9,10 @@ const client = createClient({
 
 export default async function () {
   return client.fetch(`
-    *[_type == "concert"] | order(date asc) {
+    *[
+      _type == "concert" &&
+      date >= now()
+    ] | order(date asc) [0...3] {
       _id,
       title,
       description,

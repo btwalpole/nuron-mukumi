@@ -60,30 +60,29 @@
   <section class="switcher latest-section">
     <div class="flow prose">
       <p class="eyebrow">LATEST PERFORMANCE</p>
-      <h2>{{latestPerformance.Title}}</h2>
+      <h2>{{homePage.featuredConcert.title}}</h2>
       <p>
-        {{latestPerformance.Body}}
+        {{homePage.featuredConcert.description}}
       </p>
       <div>
         <blockquote>
           <q>
-            The orchestra continued its work despite sleepless nights under
-            incessant bombardment... They are countering the Russian aggressor
-            with their own civilization.
+              {{homePage.featuredConcert.quote.text}}
           </q>
           <footer>
             <a
-              href="https://www.pizzicato.lu/nuron-mukumi-and-the-national-symphony-orchestra-of-ukraine-live-on-youtube/"
-              >Read the review in Pizzicato</a
+              href="{{homePage.featuredConcert.quote.link.url}}"
+              >{{homePage.featuredConcert.quote.link.text}}</a
             >
           </footer>
         </blockquote>
       </div>
+      {% if homePage.featuredConcert.youtubeId %}
       <iframe
         width="100%"
         height="315"
-        src="https://www.youtube.com/embed/XcHrnxagIYk?si=1yyp38fXMg-qqsou"
-        title="YouTube video player"
+        src="https://www.youtube.com/embed/{{ homePage.featuredConcert.youtubeId }}"
+        title="{{ homePage.featuredConcert.title }}"
         frameborder="0"
         allow="
           accelerometer;
@@ -97,33 +96,34 @@
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
+      {% endif %}
     </div>
     <div class="flow prose">
       <p class="eyebrow">LATEST ALBUM</p>
-      <h2>{{latestAlbum.Title}}</h2>
+      <h2>{{homePage.featuredAlbum.title}}</h2>
       <p>
-        {{latestAlbum.Body}}
+        {{homePage.featuredAlbum.description}}
       </p>
       <blockquote>
         <q>
-          {{latestAlbum.Quote.Text}}
+          {{homePage.featuredAlbum.quote.text}}
         </q>
         <footer>
-          <a href={{latestAlbum.Quote.Link.Path}}
-            > {{latestAlbum.Quote.Link.Text}}</a
+          <a href={{homePage.featuredAlbum.quote.link.url}}
+            > {{homePage.featuredAlbum.quote.link.text}}</a
           >
         </footer>
       </blockquote>
       <div class="album switcher">
-        <img src={{latestAlbum.Artwork.url}} />
+        <img src="{{ homePage.featuredAlbum.artwork | sanityImage }}" />
         <div>
-          <p>{{latestAlbum.Subheader}}</p>
+          <p>{{homePage.featuredAlbum.supportingInfo.subheader}}</p>
           <ul role="list">
-            {% for link in latestAlbum.Subheader_link %}
+            {% for link in homePage.featuredAlbum.supportingInfo.links %}
               <li>
                 <a
-                  href={{link.Path}}
-                  >{{link.Text}}</a
+                  href={{link.url}}
+                  >{{link.text}}</a
                 >
               </li>
             {% endfor %}
@@ -133,10 +133,10 @@
       <a
         class="button"
         data-button-variant="dark"
-        href={{latestAlbum.Button.Path}}
+        href="{{homePage.featuredAlbum.link}}"
         style="width: 100%"
       >
-        {{latestAlbum.Button.Text}}
+        Listen to the album
       </a>
     </div>
   </section>
@@ -144,15 +144,15 @@
   <section>
     <h2>Upcoming Concerts</h2>
     <div style="padding: 2rem 0" class="grid" data-layout="thirds">
-      {% for concert in concerts %}
+      {% for concert in upcomingConcerts %}
       <article class="card">
         <div class="flow">
-          <p class="card__eyebrow">{{concert.Date}}</p>
-          <h3 class="card__heading">{{concert.Orchestra}}</h3>
-          <p class="card__subhead">{{concert.Venue}}</p>
-          <p class="card__description">{{concert.Description}}</p>
+          <p class="card__eyebrow">{{concert.date}}</p>
+          <h3 class="card__heading">{{concert.title}}</h3>
+          <p class="card__subhead">{{concert.venue}}</p>
+          <p class="card__description">{{concert.description}}</p>
         </div>
-        <a class="button" data-button-variant="dark" href="{{concert.Link}}">
+        <a class="button" data-button-variant="dark" href="{{concert.link}}">
           Get tickets
         </a>
       </article>
@@ -169,19 +169,19 @@
       {% for article in articles %}
       <article class="card" data-card-variant="article">
         <div class="flow">
-          <p class="card__eyebrow">{{article.Date}} • {{article.Location}}</p>
-          <h3 class="card__heading">{{article.Title}}</h3>
+          <p class="card__eyebrow">{{article.date}} • {{article.location}}</p>
+          <h3 class="card__heading">{{article.title}}</h3>
           <p class="card__subhead">
-            {{article.Description}}
+            {{article.description}}
           </p>
           <blockquote>
             <q>
-              {{article.Quote}}
+              {{article.quote.text}}
             </q>
             <footer>
               <a
-                href="{{article.Link_path}}"
-                >{{article.Link_text}}</a
+                href="{{article.quote.link.url}}"
+                >{{article.quote.link.text}}</a
               >
             </footer>
           </blockquote>
