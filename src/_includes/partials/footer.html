@@ -7,25 +7,13 @@
     <p class="footer-header">Nuron Mukumi</p>
     <div class="repel">
       <ul class="cluster" role="list">
+      {% for link in homePage.footerLinks %}
         <li>
-          <a href="https://www.youtube.com/@Nuron.Mukumi">Youtube</a>
+          <a href="{{ link.url }}" target="_blank">
+            {{ link.text }}
+          </a>
         </li>
-        <li>
-          <a href="https://www.instagram.com/nuron_mukumi/">Instagram</a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/Nuron.Mukumi/">Facebook</a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/artist/3MmQ9i4bHeVJPklqoMLwhA"
-            >Spotify</a
-          >
-        </li>
-        <li>
-          <a href="https://music.apple.com/de/artist/nuron-mukumi/1438656576"
-            >Apple Music</a
-          >
-        </li>
+      {% endfor %}
       </ul>
       <p>© Nuron Mukumi 2026</p>
     </div>

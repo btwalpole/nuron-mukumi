@@ -25,6 +25,14 @@ export default async function () {
         link,
         supportingInfo
       },
+      featuredQuote {
+        text,
+        link
+      },
+      footerLinks[] {
+        text,
+        url
+      }
     }
   `)
 
