@@ -79,11 +79,11 @@
   height: 100%;
 }
 
-header ul {
+/* header ul {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-}
+} */
 
 .hero__content > .flow {
   --flow-space: var(--space-l);
