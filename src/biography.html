@@ -1,0 +1,11 @@
+---
+layout: layouts/page.html
+title: Biography
+---
+
+<h2>Biography</h2>
+<section>
+    {% for block in biography.body %}
+        <p>{{ block.text }}</p>
+    {% endfor %}
+</section>
