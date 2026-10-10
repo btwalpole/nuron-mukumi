@@ -3,9 +3,11 @@ layout: layouts/page.html
 title: Biography
 ---
 
-<h2>Biography</h2>
-<section>
-    {% for block in biography.body %}
-        <p>{{ block.text }}</p>
+<div class="flow prose">
+    <h2>Biography</h2>
+    {% for person in biography %}
+        <div class="flow prose">
+            {{ person.bodyHtml | safe }}
+        </div>
     {% endfor %}
-</section>
+</div>

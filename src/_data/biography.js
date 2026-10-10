@@ -1,4 +1,5 @@
 import { createClient } from '@sanity/client'
+import { toHTML } from "@portabletext/to-html";
 
 const client = createClient({
   projectId: 'ct7ldo6w',
@@ -16,7 +17,11 @@ export default async function () {
     }
   `)
   console.log(JSON.stringify(response, null, 2))
-  return response
+
+  return response.map((biography) => ({
+    ...biography,
+    bodyHtml: toHTML(biography.body ?? []),
+  }))
 }
 
 
