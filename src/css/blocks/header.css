@@ -1,12 +1,14 @@
-
-
 .site-head {
-  padding: 0.6rem 0;
-  background: var(--color-primary);
-  border-top: 5px solid var(--color-primary);
-  border-bottom: 5px solid var(--color-primary-shade);
+  /*padding: 0.6rem 0;*/
+  padding: var(--gutter);
+  /* border-top: 5px solid var(--color-primary); */
+  /* border-bottom: 5px solid var(--dark); */
   color: var(--color-light);
   line-height: 1.1;
+}
+
+.hero__content .site-head  {
+  padding: 0;
 }
 
 .site-head :focus {
@@ -44,18 +46,21 @@
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  color: currentColor;
+  /* color: currentColor; */
+  color: var(--light-grey);
 }
 
 .navigation a:hover {
   color: var(--color-dark);
 }
 
+burger-menu {
+  z-index: 1;
+}
 
 .burger-menu__trigger {
   display: none;
 }
-
 
 .burger-menu__bar,
 .burger-menu__bar::before,
@@ -63,13 +68,20 @@
   display: block;
   width: 24px;
   height: 3px;
-  background: var(--light-grey);
-  border: 1px solid var(--light-grey);
+  background: var(--dark);
+  border: 1px solid var(--dark);
   position: absolute;
   border-radius: 3px;
   left: 50%;
   margin-left: -12px;
   transition: transform 350ms ease-in-out;
+}
+
+.hero__content .site-head .burger-menu__bar,
+.hero__content .site-head .burger-menu__bar::before,
+.hero__content .site-head .burger-menu__bar::after  {
+  background: var(--light-grey);
+  border: 1px solid var(--light-grey);
 }
 
 .burger-menu__bar {
@@ -88,6 +100,13 @@
 
 .burger-menu__bar::after {
   bottom: -8px;
+}
+
+.burger-menu[enabled='true'][status='open'] .burger-menu__bar,
+.burger-menu[enabled='true'][status='open'] .burger-menu__bar::before,
+.burger-menu[enabled='true'][status='open'] .burger-menu__bar::after {
+    background: var(--light-grey);
+    border: 1px solid var(--light-grey);
 }
 
 
@@ -116,7 +135,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-
 .burger-menu[enabled='true'] .navigation ul {
   display: block;
 }
@@ -131,9 +149,10 @@
 
 
 .burger-menu[enabled='true'][status='open'] .burger-menu__panel {
+
   visibility: visible;
   opacity: 1;
-  transition: opacity 400ms ease;
+  transition: opacity 200ms ease;
 }
 
 .burger-menu[enabled='true'][status='closed'] .burger-menu__panel > * {
@@ -144,10 +163,9 @@
 .burger-menu[enabled='true'][status='open'] .burger-menu__panel > * {
   transform: translateY(0);
   opacity: 1;
-  transition: transform 500ms cubic-bezier(0.17, 0.67, 0, 0.87) 700ms, opacity 500ms ease
-      800ms;
+  transition: transform 200ms cubic-bezier(0.17, 0.67, 0, 0.87) 400ms, opacity 200ms ease
+      500ms;
 }
-
 
 .burger-menu[enabled='true'][status='open'] .burger-menu__bar::before {
   top: 0;
