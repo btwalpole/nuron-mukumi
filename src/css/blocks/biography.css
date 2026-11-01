@@ -1,0 +1,6 @@
+.biography__image {
+  align-self: flex-start;
+  min-width: 0;
+  width: 100%;
+  height: auto;
+}

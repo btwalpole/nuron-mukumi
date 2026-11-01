@@ -1,0 +1,26 @@
+<!-- <header class="">
+    <nav aria-label="primary" class="repel">
+    <a href="#">
+        <img src="images/logo.svg" alt="Nuron Mukumi Logo" width="80px" />
+    </a>
+    </nav>
+</header> -->
+<header class="site-head" role="banner">
+    <div class="site-head__inner">
+      <a href="/" aria-label="Nuron Mukumi home" class="site-head__brand">
+        <img src="/images/logo.svg" alt="Nuron Mukumi logo" width="80px" />
+      </a>
+      <burger-menu max-width="600">
+        <nav class="navigation" aria-label="primary">
+          <ul role="list" class="navigation__list">
+            <li>
+              <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+            </li>
+            <li>
+              <a href="/biography/" {% if page.url == "/biography/" %}aria-current="page"{% endif %}>Biography</a>
+            </li>
+          </ul>
+        </nav>
+      </burger-menu>
+    </div>
+</header>

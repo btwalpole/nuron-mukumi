@@ -21,18 +21,7 @@
   </picture>
 
   <div class="hero__content">
-    <header class="">
-      <nav aria-label="primary" class="repel">
-        <a href="#">
-          <img src="images/logo.svg" alt="Nuron Mukumi Logo" width="80px" />
-        </a>
-        <!-- <ul role="list">
-            <li><a href="#">BIOGRAPHY</a></li>
-            <li><a href="#">CONCERTS</a></li>
-            <li><a href="#">REPERTOIRE</a></li>
-          </ul> -->
-      </nav>
-    </header>
+    {% include "partials/header.html" %}
     <div class="flow">
       <div>
         <h1>
@@ -43,7 +32,7 @@
         <p>{{concerts.concerts.length}}</p>
       </div>
       <div>
-        <p class="cta-quote">{{homePage.featuredQuote.text}}</p>
+        <p class="cta-quote">"{{homePage.featuredQuote.text}}"</p>
         <div class="cta-social-proof-link">
           <p>—</p>
           <a

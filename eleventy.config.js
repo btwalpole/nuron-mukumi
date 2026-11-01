@@ -5,6 +5,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setOutputDirectory("_site");
   // Set directories to pass through to the dist folder
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/fonts");
    eleventyConfig.addFilter("sanityImage", (image, width) => {
     const imageBuilder = urlFor(image);

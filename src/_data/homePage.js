@@ -36,7 +36,7 @@ export default async function () {
     }
   `)
 
-console.log(JSON.stringify(response, null, 2))
+// console.log(JSON.stringify(response, null, 2))
 
 
   return response

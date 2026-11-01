@@ -12,6 +12,6 @@ A common wrapper/container
 .main-wrapper {
   margin-inline: auto;
   max-width: var(--wrapper-max-width, 1880px);
-  padding: var(--space-l-xl) var(--gutter);
+  padding: var(--gutter);
   position: relative;
 }
