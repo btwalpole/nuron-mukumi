@@ -13,7 +13,8 @@ export default async function () {
     *[_type == "biography"] {
       _id,
       body,
-      image
+      image,
+      teaser
     }
   `)
   console.log(JSON.stringify(response, null, 2))
@@ -23,5 +24,4 @@ export default async function () {
     bodyHtml: toHTML(biography.body ?? []),
   }))
 }
-
 

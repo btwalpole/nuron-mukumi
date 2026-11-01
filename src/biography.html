@@ -6,8 +6,17 @@ title: Biography
 <div class="flow prose">
     <h2>Biography</h2>
     {% for person in biography %}
+    <div class="switcher biography__layout">
         <div class="flow prose">
+            <p><em>{{ person.teaser }}</em></p>
             {{ person.bodyHtml | safe }}
         </div>
+        <img
+            class="biography__image"
+            src="{{ person.image | sanityImage(1200) }}"
+            alt="{{ person.image.alt or '' }}"
+            loading="lazy"
+        />
+    </div>
     {% endfor %}
 </div>

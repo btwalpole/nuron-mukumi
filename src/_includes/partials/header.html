@@ -14,19 +14,10 @@
         <nav class="navigation" aria-label="primary">
           <ul role="list" class="navigation__list">
             <li>
-              <a href="/">Home</a>
+              <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
             </li>
             <li>
-              <a href="/biography/">Biography</a>
-            </li>
-            <li>
-              <a href="#">Our Work</a>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
-            </li>
-            <li>
-              <a href="#">Your account</a>
+              <a href="/biography/" {% if page.url == "/biography/" %}aria-current="page"{% endif %}>Biography</a>
             </li>
           </ul>
         </nav>
