@@ -1,0 +1,69 @@
+---
+layout: layouts/page.html
+title: Concerts
+---
+
+<div class="flow concerts">
+  <h2>Upcoming concerts</h2>
+  <div class="concerts__list">
+  {% if concerts.upcomingGroups.length %}
+    {% for group in concerts.upcomingGroups %}
+    <section class="flow concerts__month">
+      <h3>{{ group.label }}</h3>
+      <ol class="concert-list">
+        {% for concert in group.concerts %}
+        <li class="concert-list__item">
+          <time class="concert-list__date" datetime="{{ concert.date }}">
+            {{ concert.formattedDate }}
+          </time>
+          <div class="flow">
+            <h4 class="concert-list__title">{{ concert.title }}</h4>
+            <p class="card__subhead">{{ concert.venue }}</p>
+            {% if concert.description %}
+            <p>{{ concert.description }}</p>
+            {% endif %}
+            {% if concert.link %}
+            <a class="button" data-button-variant="dark" href="{{ concert.link }}">
+              Tickets and details
+            </a>
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endfor %}
+  {% else %}
+  <p>There are no upcoming concerts at the moment. Please check back soon.</p>
+  {% endif %}
+  </div>
+
+  <h2>Past concerts</h2>
+  <div class="concerts__list">
+  {% if concerts.pastGroups.length %}
+    {% for group in concerts.pastGroups %}
+    <section class="flow concerts__month">
+      <h3>{{ group.label }}</h3>
+      <ol class="concert-list">
+        {% for concert in group.concerts %}
+        <li class="concert-list__item">
+          <time class="concert-list__date" datetime="{{ concert.date }}">
+            {{ concert.formattedDate }}
+          </time>
+          <div class="flow">
+            <h4 class="concert-list__title">{{ concert.title }}</h4>
+            <p class="card__subhead">{{ concert.venue }}</p>
+            {% if concert.description %}
+            <p>{{ concert.description }}</p>
+            {% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endfor %}
+  {% else %}
+  <p>Past concerts will appear here.</p>
+  {% endif %}
+  </div>
+</div>

@@ -1,3 +1,7 @@
+.biography__teaser {
+  font-family: "DM Serif Text", serif;
+}
+
 .biography__image {
   align-self: flex-start;
   min-width: 0;

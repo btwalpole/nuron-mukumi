@@ -8,7 +8,7 @@ title: Biography
     {% for person in biography %}
     <div class="switcher biography__layout">
         <div class="flow prose">
-            <p><em>{{ person.teaser }}</em></p>
+            <p class="biography__teaser"><em>{{ person.teaser }}</em></p>
             {{ person.bodyHtml | safe }}
         </div>
         <img

@@ -8,6 +8,10 @@
   padding: var(--space-s-m);
 }
 
+.card > .button {
+  align-self: flex-start;
+}
+
 .card__eyebrow {
   text-transform: uppercase;
   font-weight: var(--font-bold);

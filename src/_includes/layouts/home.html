@@ -29,7 +29,6 @@
           Mukumi
         </h1>
         <p>CLASSICAL PIANIST</p>
-        <p>{{concerts.concerts.length}}</p>
       </div>
       <div>
         <p class="cta-quote">"{{homePage.featuredQuote.text}}"</p>
@@ -123,7 +122,6 @@
         class="button"
         data-button-variant="dark"
         href="{{homePage.featuredAlbum.link}}"
-        style="width: 100%"
       >
         Listen to the album
       </a>
@@ -147,7 +145,7 @@
       </article>
       {% endfor %}
     </div>
-    <a class="internal-link" href="#">See the full schedule</a>
+    <a class="internal-link" href="{{ '/concerts/' | url }}">See the full schedule</a>
   </section>
   <hr />
 
