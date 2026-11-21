@@ -106,7 +106,7 @@ h1 + p {
 
 .cta-quote {
   font-size: var(--size-step-1);
-  font-family: "DM Serif Text";
+  /* font-family: "DM Serif Text"; */
 }
 
 .cta-social-proof-link {

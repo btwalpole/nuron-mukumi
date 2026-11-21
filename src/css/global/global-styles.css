@@ -5,6 +5,7 @@
   --mid-grey: #b2b2b2;
   --grey: #7d7d7d;
   --dark-grey: #525252;
+  --dark-mid: #3a3a3a;
   --dark: #272727;
 
   --transition-base: 250ms ease;
@@ -50,7 +51,7 @@
   --leading-loose: 1.7;
 
   /* -- Fluid Spacing Scale -- */
-  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.25,1.5|2|3|4|6,s-l|s-xl&g=s,l,xl,12 */
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,20,1.25,9,2,&s=0.75|0.25,1.5|2|3|4|6|8|10|14,s-l|s-xl&g=s,l,xl,12 */
 
   --space-2xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
   --space-xs: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
@@ -60,6 +61,9 @@
   --space-xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
   --space-2xl: clamp(4rem, 3.6522rem + 1.7391vw, 5rem);
   --space-3xl: clamp(6rem, 5.4783rem + 2.6087vw, 7.5rem);
+  --space-4xl: clamp(8rem, 7.3043rem + 3.4783vw, 10rem);
+  --space-5xl: clamp(10rem, 9.1304rem + 4.3478vw, 12.5rem);
+  --space-6xl: clamp(14rem, 12.7826rem + 6.087vw, 17.5rem);
 
   /* One-up pairs */
   --space-2xs-xs: clamp(0.25rem, 0.0109rem + 1.1957vw, 0.9375rem);
@@ -69,6 +73,9 @@
   --space-l-xl: clamp(2rem, 1.3913rem + 3.0435vw, 3.75rem);
   --space-xl-2xl: clamp(3rem, 2.3043rem + 3.4783vw, 5rem);
   --space-2xl-3xl: clamp(4rem, 2.7826rem + 6.087vw, 7.5rem);
+  --space-3xl-4xl: clamp(6rem, 4.6087rem + 6.9565vw, 10rem);
+  --space-4xl-5xl: clamp(8rem, 6.4348rem + 7.8261vw, 12.5rem);
+  --space-5xl-6xl: clamp(10rem, 7.3913rem + 13.0435vw, 17.5rem);
 
   /* Custom pairs */
   --space-s-l: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);

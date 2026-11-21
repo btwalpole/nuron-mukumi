@@ -12,6 +12,10 @@
   align-self: flex-start;
 }
 
+.card__heading {
+  font-family: "DM Serif Display", serif;
+}
+
 .card__eyebrow {
   text-transform: uppercase;
   font-weight: var(--font-bold);

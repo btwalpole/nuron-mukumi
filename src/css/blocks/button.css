@@ -1,7 +1,7 @@
 .button {
   --button-bg: transparent;
   --button-text: var(--light-grey);
-  --button-x-padding: 1.5em;
+  --button-x-padding: 2em;
   --button-y-padding: 0.75em;
   --button-gutter: 0.5ch;
   --focus-color: var(--light-grey);
@@ -17,7 +17,7 @@
   line-height: var(--leading-flat);
   cursor: pointer;
   text-decoration: none;
-  font-family: "DM Serif Text";
+  font-family: "Source Sans 3", sans-serif;
   font-size: var(--size-step-0);
   max-height: fit-content;
 }
@@ -31,9 +31,9 @@
 }
 
 .button[data-button-variant="dark"] {
-  --button-bg: var(--dark);
+  --button-bg: var(--dark-mid);
   --button-text: var(--light-grey);
-  --focus-color: var(--dark);
+  --focus-color: var(--dark-mid);
   border: none;
 }
 

@@ -23,7 +23,6 @@ export default async function () {
   const formatDate = new Intl.DateTimeFormat("en", {
     day: "numeric",
     month: "long",
-    year: "numeric",
     timeZone: "UTC",
   })
   const formatMonth = new Intl.DateTimeFormat("en", {

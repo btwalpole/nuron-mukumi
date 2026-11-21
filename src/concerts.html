@@ -4,12 +4,12 @@ title: Concerts
 ---
 
 <div class="flow concerts">
-  <h2>Upcoming concerts</h2>
-  <div class="concerts__list">
+  <h2>Upcoming Concerts</h2>
+  <div class="flow concerts__list">
   {% if concerts.upcomingGroups.length %}
     {% for group in concerts.upcomingGroups %}
-    <section class="flow concerts__month">
-      <h3>{{ group.label }}</h3>
+    <section class="concerts__month">
+      <h3 class="concerts__month-label">{{ group.label }}</h3>
       <ol class="concert-list">
         {% for concert in group.concerts %}
         <li class="concert-list__item">
@@ -38,12 +38,12 @@ title: Concerts
   {% endif %}
   </div>
 
-  <h2>Past concerts</h2>
-  <div class="concerts__list">
+  <h2 class="concerts__past-title">Past Concerts</h2>
+  <div class="flow concerts__list">
   {% if concerts.pastGroups.length %}
     {% for group in concerts.pastGroups %}
-    <section class="flow concerts__month">
-      <h3>{{ group.label }}</h3>
+    <section class="concerts__month">
+      <h3 class="concerts__month-label">{{ group.label }}</h3>
       <ol class="concert-list">
         {% for concert in group.concerts %}
         <li class="concert-list__item">
