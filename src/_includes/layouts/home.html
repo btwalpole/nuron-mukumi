@@ -134,7 +134,7 @@
       {% for concert in upcomingConcerts %}
       <article class="card">
         <div class="flow">
-          <p class="card__eyebrow">{{concert.date}}</p>
+          <p class="card__eyebrow">{{concert.formattedDate}}</p>
           <h3 class="card__heading">{{concert.title}}</h3>
           <p class="card__subhead">{{concert.venue}}</p>
           <p class="card__description">{{concert.description}}</p>
@@ -156,7 +156,7 @@
       {% for article in articles %}
       <article class="card" data-card-variant="article">
         <div class="flow">
-          <p class="card__eyebrow">{{article.date}} • {{article.location}}</p>
+          <p class="card__eyebrow">{{article.formattedDate}}{% if article.location %} • {{article.location}}{% endif %}</p>
           <h3 class="card__heading">{{article.title}}</h3>
           <p class="card__subhead">
             {{article.description}}
@@ -176,7 +176,7 @@
       </article>
       {% endfor %}
     </div>
-    <a class="internal-link" href="#">Read more articles</a>
+    <a class="internal-link" href="{{ '/articles/' | url }}">Read more articles</a>
   </section>
   <hr />
   <section class="enquire" id="enquire-section">

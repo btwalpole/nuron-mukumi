@@ -5,6 +5,7 @@
   justify-content: space-between;
   gap: var(--gutter, 1rem);
   background: white;
+  border: 1px solid var(--midlight-grey);
   padding: var(--space-s-m);
 }
 
@@ -19,6 +20,7 @@
 .card__eyebrow {
   text-transform: uppercase;
   font-weight: var(--font-bold);
+  font-size: var(--size-step-0);
   color: var(--dark-grey);
   letter-spacing: var(--uppercase-kerning);
 }
@@ -33,5 +35,11 @@
   .card__eyebrow {
     font-weight: var(--font-regular);
     color: var(--grey);
+  }
+
+  blockquote q {
+    font-weight: var(--font-normal);
+    font-style: italic;
+    color: var(--dark-mid);
   }
 }

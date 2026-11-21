@@ -1,0 +1,29 @@
+---
+layout: layouts/page.html
+title: Articles
+---
+
+<div class="articles-page">
+  <h2>Articles</h2>
+  <div class="articles-list">
+    {% for article in articles | reverse %}
+    <article class="card" data-card-variant="article">
+      <div class="flow">
+        <p class="card__eyebrow">{{ article.formattedDate }}{% if article.location %} • {{ article.location }}{% endif %}</p>
+        <h3 class="card__heading">{{ article.title }}</h3>
+        <p class="card__subhead">{{ article.description }}</p>
+        <blockquote>
+          {% if article.quote.text %}
+          <q>{{ article.quote.text }}</q>
+          {% endif %}
+          <footer>
+            <a href="{{ article.quote.link.url }}">
+              {{ article.quote.link.text }}
+            </a>
+          </footer>
+        </blockquote>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>

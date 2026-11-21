@@ -1,0 +1,11 @@
+.articles-page {
+  max-width: 55rem;
+  margin-inline: auto;
+}
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  margin-block-start: var(--space-l);
+}

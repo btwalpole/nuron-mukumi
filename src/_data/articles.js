@@ -1,4 +1,5 @@
 import { createClient } from '@sanity/client'
+import { formatCardDate } from '../_utils/formatCardDate.js'
 
 const client = createClient({
   projectId: 'ct7ldo6w',
@@ -8,7 +9,7 @@ const client = createClient({
 })
 
 export default async function () {
-  return client.fetch(`
+  const articles = await client.fetch(`
     *[_type == "article"] | order(date asc) {
       _id,
       title,
@@ -18,4 +19,9 @@ export default async function () {
       quote
     }
   `)
+
+  return articles.map((article) => ({
+    ...article,
+    formattedDate: formatCardDate(article.date),
+  }))
 }

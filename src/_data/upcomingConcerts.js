@@ -1,4 +1,5 @@
 import { createClient } from '@sanity/client'
+import { formatCardDate } from '../_utils/formatCardDate.js'
 
 const client = createClient({
   projectId: 'ct7ldo6w',
@@ -8,7 +9,7 @@ const client = createClient({
 })
 
 export default async function () {
-  return client.fetch(`
+  const concerts = await client.fetch(`
     *[
       _type == "concert" &&
       date >= now()
@@ -21,4 +22,9 @@ export default async function () {
       link
     }
   `)
+
+  return concerts.map((concert) => ({
+    ...concert,
+    formattedDate: formatCardDate(concert.date),
+  }))
 }
