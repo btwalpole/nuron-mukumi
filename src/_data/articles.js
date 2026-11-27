@@ -10,7 +10,7 @@ const client = createClient({
 
 export default async function () {
   const articles = await client.fetch(`
-    *[_type == "article"] | order(date asc) {
+    *[_type == "article"] | order(date desc) {
       _id,
       title,
       description,

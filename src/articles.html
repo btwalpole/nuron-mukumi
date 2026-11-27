@@ -6,7 +6,7 @@ title: Articles
 <div class="articles-page">
   <h2>Articles</h2>
   <div class="articles-list">
-    {% for article in articles | reverse %}
+    {% for article in articles %}
     <article class="card" data-card-variant="article">
       <div class="flow">
         <p class="card__eyebrow">{{ article.formattedDate }}{% if article.location %} • {{ article.location }}{% endif %}</p>

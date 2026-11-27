@@ -153,7 +153,7 @@
     <p class="eyebrow">INTERVIEWS AND ARTICLES</p>
     <h2>Press and Praise</h2>
     <div style="padding: 2rem 0" class="grid" data-layout="thirds">
-      {% for article in articles %}
+      {% for article in articles.slice(0, 3) %}
       <article class="card" data-card-variant="article">
         <div class="flow">
           <p class="card__eyebrow">{{article.formattedDate}}{% if article.location %} • {{article.location}}{% endif %}</p>
