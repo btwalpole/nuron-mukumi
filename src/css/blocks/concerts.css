@@ -6,7 +6,7 @@
 
 .concerts__list {
   max-width: 70rem;
-  --flow-space: var(--space-xl);
+  --flow-space: var(--space-2xl);
 }
 
 .concerts .concert-list__item p {
@@ -17,8 +17,15 @@
   --flow-space: var(--space-2xl);
 }
 
+.concerts__month {
+  border-block-start: 2px solid var(--dark);
+  padding-block-start: var(--space-s);
+}
+
 .concerts__month-label {
-  text-transform: uppercase;
+  font-family: "DM Serif Display", serif;
+  font-weight: var(--font-normal);
+  font-size: var(--size-step-2);
 }
 
 .concerts__past-title {
@@ -37,7 +44,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-xs) var(--space-s);
-  padding-block: var(--space-l);
+  padding-block: var(--space-m);
 }
 
 .concert-list__item:not(:last-child) {
@@ -50,14 +57,32 @@
 
 .concert-list__date {
   color: var(--dark-grey);
-  font-size: var(--size-step-0);
-  text-transform: uppercase;
+  line-height: var(--leading-flat);
+}
+
+.concert-list__date-day {
+  display: block;
+  font-family: "DM Serif Display", serif;
+  font-size: var(--size-step-3);
+  color: var(--dark);
+}
+
+.concert-list__date-weekday {
+  display: block;
+  margin-block-start: var(--space-2xs);
+  font-size: var(--size-step--1);
   font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .concert-list__title {
   margin: 0;
   font-family: "DM Serif Display", serif;
+  color: var(--dark);
+}
+
+.concert-list__description {
   color: var(--dark-mid);
 }
 

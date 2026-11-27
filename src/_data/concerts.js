@@ -25,18 +25,26 @@ export default async function () {
     month: "long",
     timeZone: "UTC",
   })
+  const formatWeekday = new Intl.DateTimeFormat("en", {
+    weekday: "short",
+    timeZone: "UTC",
+  })
   const formatMonth = new Intl.DateTimeFormat("en", {
     month: "long",
     year: "numeric",
     timeZone: "UTC",
   })
 
-  const concertsWithFormattedDates = concerts.map((concert) => ({
-    ...concert,
-    formattedDate: concert.date
-      ? formatDate.format(new Date(`${concert.date}T00:00:00Z`))
-      : "",
-  }))
+  const concertsWithFormattedDates = concerts.map((concert) => {
+    const date = concert.date ? new Date(`${concert.date}T00:00:00Z`) : null
+
+    return {
+      ...concert,
+      formattedDate: date ? formatDate.format(date) : "",
+      day: date ? date.getUTCDate() : "",
+      weekday: date ? formatWeekday.format(date) : "",
+    }
+  })
 
   const groupByMonth = (items) => {
     const groups = new Map()

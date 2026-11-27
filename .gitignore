@@ -11,3 +11,6 @@ npm-debug.*
 # Node modules and output
 node_modules
 _site
+
+# Claude Code
+.claude/launch.json
