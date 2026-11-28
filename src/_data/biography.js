@@ -17,9 +17,21 @@ export default async function () {
       teaser
     }
   `)
+  // Drop empty paragraphs left in the Sanity text, which otherwise add stray gaps
+  const isEmptyBlock = (block) =>
+    block._type === "block" &&
+    (block.children ?? []).every((child) => !child.text?.trim())
+
+  // Sanity asset refs encode the original size, e.g. image-<id>-3648x5472-jpg
+  const imageDimensions = (image) => {
+    const match = image?.asset?._ref?.match(/-(\d+)x(\d+)-/)
+    return match ? { width: Number(match[1]), height: Number(match[2]) } : null
+  }
+
   return response.map((biography) => ({
     ...biography,
-    bodyHtml: toHTML(biography.body ?? []),
+    bodyHtml: toHTML((biography.body ?? []).filter((block) => !isEmptyBlock(block))),
+    imageDimensions: imageDimensions(biography.image),
   }))
 }
 

@@ -27,10 +27,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/fonts");
    eleventyConfig.addFilter("sanityImage", (image, width) => {
-    const imageBuilder = urlFor(image);
+    // The Sanity URL builder is immutable: each call returns a new builder
+    let imageBuilder = urlFor(image).auto("format");
 
     if (width) {
-      imageBuilder.width(width);
+      imageBuilder = imageBuilder.width(width);
     }
 
     return imageBuilder.url();

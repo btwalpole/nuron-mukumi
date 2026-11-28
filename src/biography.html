@@ -6,17 +6,20 @@ title: Biography
 <div class="flow prose">
     <h2>Biography</h2>
     {% for person in biography %}
-    <div class="switcher biography__layout">
-        <div class="flow prose">
+    <div class="biography__layout">
+        {% set dims = person.imageDimensions %}
+        <img
+            class="biography__image"
+            src="{{ person.image | sanityImage(800) }}"
+            srcset="{{ person.image | sanityImage(400) }} 400w, {{ person.image | sanityImage(800) }} 800w, {{ person.image | sanityImage(1200) }} 1200w"
+            sizes="20rem"
+            alt="{{ person.image.alt or 'Nuron Mukumi smiling, in a white shirt, outdoors' }}"
+            {% if dims %}width="800" height="{{ (800 * dims.height / dims.width) | round }}"{% endif %}
+        />
+        <div class="flow prose biography__text">
             <p class="biography__teaser"><em>{{ person.teaser }}</em></p>
             {{ person.bodyHtml | safe }}
         </div>
-        <img
-            class="biography__image"
-            src="{{ person.image | sanityImage(1200) }}"
-            alt="{{ person.image.alt or '' }}"
-            loading="lazy"
-        />
     </div>
     {% endfor %}
 </div>

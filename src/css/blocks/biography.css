@@ -1,10 +1,41 @@
+.biography__layout {
+  display: grid;
+  gap: var(--space-l);
+}
+
 .biography__teaser {
   font-family: "DM Serif Text", serif;
+  font-size: var(--size-step-1);
+  line-height: var(--leading-standard);
+}
+
+.biography__text h3 {
+  font-family: "DM Serif Display", serif;
+  font-weight: var(--font-normal);
+  --flow-space: var(--space-xl);
 }
 
 .biography__image {
-  align-self: flex-start;
-  min-width: 0;
   width: 100%;
+  max-width: 20rem;
   height: auto;
+}
+
+/* Side by side: a narrow photo column on the left, text on the right.
+   The photo only becomes sticky here, where it has its own column, so the
+   text can never scroll underneath it. */
+@media (min-width: 50em) {
+  .biography__layout {
+    grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-xl);
+  }
+}
+
+/* Only stick when the viewport is tall enough to show the whole photo */
+@media (min-width: 50em) and (min-height: 36rem) {
+  .biography__image {
+    position: sticky;
+    top: var(--space-l);
+  }
 }
