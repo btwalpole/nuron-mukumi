@@ -6,6 +6,7 @@
 .enquire img {
   aspect-ratio: 800/1067;
   align-self: flex-start;
-  max-width: clamp(10rem, 100%, 40rem);
-  overflow: auto;
+  max-width: 22rem;
+  height: auto;
+  margin-inline-start: auto;
 }

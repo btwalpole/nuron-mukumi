@@ -104,6 +104,30 @@ h1 + p {
   margin-block-start: 0.4em;
 }
 
+/* Stacked name: min-content puts each word on its own line */
+.hero h1 {
+  font-size: var(--size-step-6);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  max-inline-size: min-content;
+}
+
+.hero .button {
+  --button-x-padding: 1.4em;
+  --button-y-padding: 0.6em;
+  font-size: var(--size-step-0);
+}
+
+@media (min-width: 601px) {
+  .hero h1 {
+    font-size: var(--size-step-8);
+  }
+
+  .hero .button {
+    font-size: var(--size-step-1);
+  }
+}
+
 .cta-quote {
   font-size: var(--size-step-1);
   /* font-family: "DM Serif Text"; */

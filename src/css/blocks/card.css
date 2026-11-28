@@ -19,10 +19,10 @@
 
 .card__eyebrow {
   text-transform: uppercase;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-normal);
   font-size: var(--size-step-0);
   color: var(--dark-grey);
-  letter-spacing: var(--uppercase-kerning);
+  letter-spacing: 0.02em;
 }
 
 .card__subhead {
@@ -32,11 +32,6 @@
 }
 
 .card[data-card-variant="article"] {
-  .card__eyebrow {
-    font-weight: var(--font-regular);
-    color: var(--grey);
-  }
-
   blockquote q {
     font-weight: var(--font-normal);
     font-style: italic;

@@ -17,8 +17,9 @@
   line-height: var(--leading-flat);
   cursor: pointer;
   text-decoration: none;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "DM Serif Display", serif;
   font-size: var(--size-step-0);
+  letter-spacing: 0.01em;
   max-height: fit-content;
 }
 
